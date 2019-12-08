@@ -7,15 +7,15 @@
   
   <title>万网域名+Hexo+Github page从零开始搭建个人博客 | LittlePeanut</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="本文介绍一种基于Hexo框架和Github Page服务搭建博客的方法，其中还将原始的Github page指向了自有域名本章结构  github安装与配置 自有域名购买与配置 Hexo框架使用  github配置 安装git,ssh 1$ sudo apt-get install git2$ sudo apt-get install ssh 配置git用户名和邮箱 1$ git config -">
+  <meta name="description" content="本文介绍一种基于Hexo框架和Github Page服务搭建博客的方法，其中还将原始的Github page指向了自有域名本章结构  github安装与配置 自有域名购买与配置 Hexo框架使用  github配置安装git,ssh 1$ sudo apt-get install git2$ sudo apt-get install ssh 配置git用户名和邮箱 1$ git config --">
 <meta name="keywords" content="万网,Hexo,Github Page">
 <meta property="og:type" content="article">
 <meta property="og:title" content="万网域名+Hexo+Github page从零开始搭建个人博客">
 <meta property="og:url" content="https:&#x2F;&#x2F;littlepeanut.top&#x2F;2019&#x2F;12&#x2F;08&#x2F;%E4%B8%87%E7%BD%91%E5%9F%9F%E5%90%8D-Hexo-Github-page%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2&#x2F;index.html">
 <meta property="og:site_name" content="LittlePeanut">
-<meta property="og:description" content="本文介绍一种基于Hexo框架和Github Page服务搭建博客的方法，其中还将原始的Github page指向了自有域名本章结构  github安装与配置 自有域名购买与配置 Hexo框架使用  github配置 安装git,ssh 1$ sudo apt-get install git2$ sudo apt-get install ssh 配置git用户名和邮箱 1$ git config -">
+<meta property="og:description" content="本文介绍一种基于Hexo框架和Github Page服务搭建博客的方法，其中还将原始的Github page指向了自有域名本章结构  github安装与配置 自有域名购买与配置 Hexo框架使用  github配置安装git,ssh 1$ sudo apt-get install git2$ sudo apt-get install ssh 配置git用户名和邮箱 1$ git config --">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-12-08T14:13:55.025Z">
+<meta property="og:updated_time" content="2019-12-08T14:15:43.928Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/atom.xml" title="LittlePeanut" type="application/atom+xml">
@@ -91,66 +91,56 @@
 <li><a href="#domain">自有域名购买与配置</a></li>
 <li><a href="#hexo">Hexo框架使用</a></li>
 </ul>
-<h2 id="github配置"><a href="#github配置" class="headerlink" title="github配置"></a>github配置</h2><div id="github"></div>
-安装git,ssh
+<h2 id="github配置"><a href="#github配置" class="headerlink" title="github配置"></a>github配置<div id="github"></div></h2><p>安装git,ssh</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$ sudo apt-get install git</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">$ sudo apt-get install ssh</span></pre></td></tr></table></figure>
-配置git用户名和邮箱
+<p>配置git用户名和邮箱</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$ git config --global user.name <span class="string">"your name"</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">$ git config--global user.email <span class="string">"your email"</span></span></pre></td></tr></table></figure>
-配置SSH，参考 ，如下：
-创建SSH key
+<p>配置SSH，参考 ，如下：<br>创建SSH key</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -b 4096 -C <span class="string">"your email"</span></span></pre></td></tr></table></figure>
-将~/.ssh/id_rsa.pub内容添加到Github-Setting-SSH keys
-验证github SSH连接
+<p>将~/.ssh/id_rsa.pub内容添加到Github-Setting-SSH keys<br>验证github SSH连接</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$ ssh -T git@github.com</span></pre></td></tr></table></figure>
-more Info [Github SSH文档](https://help.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh).
-
+<p>more Info <a href="https://help.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh" target="_blank" rel="noopener">Github SSH文档</a>.</p>
 <p>配置完Github后，创建Github库xxx.github.io，其中Github Page库的名称必须为xx.github.io</p>
-<h2 id="使用自有域名"><a href="#使用自有域名" class="headerlink" title="使用自有域名"></a>使用自有域名</h2><div id="domain"></div>
-1. 万网或godaddy购买域名，由于国内备案麻烦谨慎购买.cn域名，除.com常见的域名有.cc，.me，.top，.club等。
-2. 万网域名自动使用hichina云解析(若使用godaddy，为了加快解析速度，防止被墙，可将 DNS 服务器可设置为为DNSPod)
-3. 添加两条解析，使得访问“xxx.com”和“www.xxx.com”时均能够解析域名
-    主机记录@，记录类型CNAME，解析线路默认，记录值littlepeanut.github.io.，TTL1小时；主机记录www，记录类型A，解析线路默认，记录值185.199.109.153，TTL1小时(主机IP可直接ping域名得到)
-4. 今后可根据需要添加二级域名
-5. 在博客中source和public中添加CNAME，记录域名littlepeanut.top，将本地和Github Page上的Hexo绑定到自有域名
-6. 若在Github Page中使用自有域名，一般在一天后才能在库的Setting中开启HTTPS
-
-
-<h2 id="Hexo使用"><a href="#Hexo使用" class="headerlink" title="Hexo使用"></a>Hexo使用</h2><div id="hexo"></div>
-Hexo是一个常见的静态博客框架.  
-首先参考 [Hexo中文文档](https://hexo.io/zh-cn/docs/)安装Hexo，注意文档中提到在安装时尽量不要使用sudo  
-安装npm和Node.js，验证
+<h2 id="使用自有域名"><a href="#使用自有域名" class="headerlink" title="使用自有域名"></a>使用自有域名<div id="domain"></div></h2><ol>
+<li>万网或godaddy购买域名，由于国内备案麻烦谨慎购买.cn域名，除.com常见的域名有.cc，.me，.top，.club等。</li>
+<li>万网域名自动使用hichina云解析(若使用godaddy，为了加快解析速度，防止被墙，可将 DNS 服务器可设置为为DNSPod)</li>
+<li>添加两条解析，使得访问“xxx.com”和“<a href="http://www.xxx.com”时均能够解析域名" target="_blank" rel="noopener">www.xxx.com”时均能够解析域名</a><br> 主机记录@，记录类型CNAME，解析线路默认，记录值littlepeanut.github.io.，TTL1小时；主机记录www，记录类型A，解析线路默认，记录值185.199.109.153，TTL1小时(主机IP可直接ping域名得到)</li>
+<li>今后可根据需要添加二级域名</li>
+<li>在博客中source和public中添加CNAME，记录域名littlepeanut.top，将本地和Github Page上的Hexo绑定到自有域名</li>
+<li>若在Github Page中使用自有域名，一般在一天后才能在库的Setting中开启HTTPS</li>
+</ol>
+<h2 id="Hexo使用"><a href="#Hexo使用" class="headerlink" title="Hexo使用"></a>Hexo使用<div id="hexo"></div></h2><p>Hexo是一个常见的静态博客框架.<br>首先参考 <a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">Hexo中文文档</a>安装Hexo，注意文档中提到在安装时尽量不要使用sudo<br>安装npm和Node.js，验证</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$ node -v </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">$ npm -v</span></pre></td></tr></table></figure>
-下面初始化博客
+<p>下面初始化博客</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$ hexo init myblog</span></pre></td></tr></table></figure>
-安装git管理扩展
+<p>安装git管理扩展</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$ npm i hexo-deployer-git</span></pre></td></tr></table></figure>
-新建文章，存放在~/source/_posts
+<p>新建文章，存放在~/source/_posts</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$ hexo n <span class="string">"article title"</span> == hexo new <span class="string">"article title"</span></span></pre></td></tr></table></figure>
-生成静态网页
+<p>生成静态网页</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$ hexo g</span></pre></td></tr></table></figure>
-启动服务，可本地预览
+<p>启动服务，可本地预览</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$ hexo s</span></pre></td></tr></table></figure>
-部署
+<p>部署</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">hexo d</span></pre></td></tr></table></figure>
-修改配置文件_config.yml，首先更改url和root，若不修改，即使在本地服务网页能够正常显示，部署后仍无法识别css等文件，具体修改规则如下：  
-如果域名是https://xxx.com：
+<p>修改配置文件_config.yml，首先更改url和root，若不修改，即使在本地服务网页能够正常显示，部署后仍无法识别css等文件，具体修改规则如下：<br>如果域名是<a href="https://xxx.com：" target="_blank" rel="noopener">https://xxx.com：</a></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">url: https:&#x2F;&#x2F;xxx.com&#x2F;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">root: &#x2F;</span></pre></td></tr></table></figure>
-如果域名是https://xxx.com/blog：
+<p>如果域名是<a href="https://xxx.com/blog：" target="_blank" rel="noopener">https://xxx.com/blog：</a></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">url: https:&#x2F;&#x2F;xxx.com&#x2F;blog</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">root: &#x2F;blog</span></pre></td></tr></table></figure>
-如果域名是https://yourID.github.io/blog：
+<p>如果域名是<a href="https://yourID.github.io/blog：" target="_blank" rel="noopener">https://yourID.github.io/blog：</a></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">url: https:&#x2F;&#x2F;yourID.github.io&#x2F;blog</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">root: &#x2F;blog</span></pre></td></tr></table></figure>
-如果域名是https://yourID.github.io：
+<p>如果域名是<a href="https://yourID.github.io：" target="_blank" rel="noopener">https://yourID.github.io：</a></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">url: https:&#x2F;&#x2F;yourID.github.io&#x2F;blog</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">root: &#x2F;yourID.github.io&#x2F;</span></pre></td></tr></table></figure>
-同样还须在_config.yml中设置部署的git库地址  
+<p>同样还须在_config.yml中设置部署的git库地址  </p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">deploy:</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">  type: git</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">  repo: https:&#x2F;&#x2F;github.com&#x2F;feiwww&#x2F;littlepeanut.github.io.git</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">  branch: master</span></pre></td></tr></table></figure>
-其他常用Hexo命令
+<p>其他常用Hexo命令</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$ npm update hexo -g <span class="comment">#升级 </span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">$ hexo server <span class="comment">#Hexo会监视文件变动并自动更新，无须重启服务器</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">$ hexo server -s <span class="comment">#静态模式</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">$ hexo server -p 5000 <span class="comment">#更改端口</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">$ hexo server -i 192.168.1.1 <span class="comment">#自定义 IP</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">$ hexo clean <span class="comment">#清除缓存，若是网页正常情况下可以忽略这条命令</span></span></pre></td></tr></table></figure>
-在一般情况下更新博客时，重新生成下静态博客并部署到Github上即可，使用的操作如下：
+<p>在一般情况下更新博客时，重新生成下静态博客并部署到Github上即可，使用的操作如下：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$ hexo clean</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">$ hexo g</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">$ hexo d</span></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://littlepeanut.top/2019/12/08/%E4%B8%87%E7%BD%91%E5%9F%9F%E5%90%8D-Hexo-Github-page%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" data-id="ck3x38h3h0001etyffuus39ne" class="article-share-link">Share</a>
+      <a data-url="https://littlepeanut.top/2019/12/08/%E4%B8%87%E7%BD%91%E5%9F%9F%E5%90%8D-Hexo-Github-page%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" data-id="ck3x3at2s0000ktyf0g1t2xmo" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Github-Page/" rel="tag">Github Page</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E4%B8%87%E7%BD%91/" rel="tag">万网</a></li></ul>
