@@ -214,15 +214,8 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                <p>本文介绍一种基于Hexo框架和Github Page服务搭建博客的方法，其中还将原始的Github page指向了自有域名<br>
-本章结构</p>
-<ul>
-<li><a href="#github">github安装与配置</a></li>
-<li><a href="#domain">自有域名购买与配置</a></li>
-<li><a href="#hexo">Hexo框架使用</a></li>
-</ul>
-<div id="github"></div>  
-<h1><span id="github配置">github配置</span></h1>
+                <p>本文介绍一种基于Hexo框架和Github Page服务搭建博客的方法，其中还将原始的Github page指向了自有域名。</p>
+<h1 id="github配置">github配置</h1>
 <hr>
 <p>安装git,ssh</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get install git</span><br><span class="line">$ sudo apt-get install ssh</span><br></pre></td></tr></table></figure>
@@ -236,8 +229,7 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh -T git@github.com</span><br></pre></td></tr></table></figure>
 <p>more Info <a href="https://help.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh" target="_blank" rel="noopener">Github SSH文档</a>.</p>
 <p>配置完Github后，<a href="http://xn--Githubxxx-4s4oo11ie9a.github.io" target="_blank" rel="noopener">创建Github库xxx.github.io</a>，其中Github <a href="http://xn--Pagexx-zy7ir11bz6wqxcb44gnuii73h.github.io" target="_blank" rel="noopener">Page库的名称必须为xx.github.io</a></p>
-<div id="domain"></div>  
-<h1><span id="使用自有域名">使用自有域名</span></h1>
+<h1 id="使用自有域名">使用自有域名</h1>
 <hr>
 <ol>
 <li>万网或godaddy购买域名，由于国内备案麻烦谨慎购买.cn域名，<a href="http://xn--ml5a.xn--com-t33er8otolqqp0g3aog0b.cc" target="_blank" rel="noopener">除.com常见的域名有.cc</a>，.me，.top，.club等。</li>
@@ -248,8 +240,7 @@
 <li>在博客中source和public中添加CNAME，记录域名littlepeanut.top，将本地和Github Page上的Hexo绑定到自有域名</li>
 <li>若在Github Page中使用自有域名，一般在一天后才能在库的Setting中开启HTTPS</li>
 </ol>
-<div id="hexo"></div>  
-<h1><span id="hexo使用">Hexo使用</span></h1>
+<h1 id="hexo使用">Hexo使用</h1>
 <hr>
 <p>Hexo是一个常见的静态博客框架.<br>
 首先参考 <a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">Hexo中文文档</a>安装Hexo，注意文档中提到在安装时尽量不要使用sudo<br>
@@ -282,7 +273,7 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ npm update hexo -g <span class="comment">#升级 </span></span><br><span class="line">$ hexo server <span class="comment">#Hexo会监视文件变动并自动更新，无须重启服务器</span></span><br><span class="line">$ hexo server -s <span class="comment">#静态模式</span></span><br><span class="line">$ hexo server -p 5000 <span class="comment">#更改端口</span></span><br><span class="line">$ hexo server -i 192.168.1.1 <span class="comment">#自定义 IP</span></span><br><span class="line">$ hexo clean <span class="comment">#清除缓存，若是网页正常情况下可以忽略这条命令</span></span><br></pre></td></tr></table></figure>
 <p>在一般情况下更新博客时，重新生成下静态博客并部署到Github上即可，使用的操作如下：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean</span><br><span class="line">$ hexo g</span><br><span class="line">$ hexo d</span><br></pre></td></tr></table></figure>
-<h1><span id="备份博客源代码">备份博客源代码</span></h1>
+<h1 id="备份博客源代码">备份博客源代码</h1>
 <p>使用hexo d将hexo部署到Github Page中后，只是将静态博客上传，并没有保存博客的源代码，为了方便在不同终端电脑上对博客格式和内容进行修改，这里将博客所有源代码同时保存到Github中，具体是将源代码保存到我们GIthub Page项目的分支中。</p>
 <ol>
 <li>在网页端添加hexo分支，并将其设置为主分支，在切换到hexo分支后</li>
@@ -296,12 +287,25 @@
                 <!-- Pager -->
                 <ul class="pager">
                     
+                        <li class="previous">
+                            <a href="/2019/12/09/Hexo-beantech主题博客常见bug修复/" data-toggle="tooltip" data-placement="top" title="Hexo-beantech主题博客常见bug修复">&larr; Previous Post</a>
+                        </li>
+                    
                     
                         <li class="next">
                             <a href="/2017/04/05/Ubuntu常用命令/" data-toggle="tooltip" data-placement="top" title="Ubuntu常用命令">Next Post &rarr;</a>
                         </li>
                     
                 </ul>
+		<!--PC版-->
+		<div id="SOHUCS" ></div>
+		<script charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/changyan.js" ></script>
+		<script type="text/javascript">
+			window.changyan.api.config({
+				appid: 'cyuzPPYBx',
+				conf: 'prod_5e1680173ac2f298aa36381ba9396f32'
+			});
+		</script>
 
                 <!-- duoshuo Share start -->
                 
@@ -328,7 +332,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">github配置</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">使用自有域名</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">Hexo使用</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">备份博客源代码</span></a></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#github配置"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">github配置</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#使用自有域名"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">使用自有域名</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#hexo使用"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">Hexo使用</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#备份博客源代码"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">备份博客源代码</span></a></li></ol>
         
         </div>
       </aside>

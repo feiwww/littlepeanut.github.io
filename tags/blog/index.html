@@ -18,7 +18,7 @@
         
     </title>
 
-    <link rel="canonical" href="http://yoursite-url/">
+    <link rel="canonical" href="http://yoursite-url/tags/blog/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -69,8 +69,8 @@
 <style type="text/css">
     header.intro-header{
         
-            background-image: url('/img/header_img/home-bg-2-dark.png') 
-            /*config*/
+            background-image: url('/undefined')
+            /*page*/
         
     }
     
@@ -208,147 +208,101 @@
                 post-container
             ">
             
-                <!-- Main Content -->
-
-
-<div class="post-preview">
-
-    <a href="/2019/12/09/Hexo-beantech主题博客常用功能配置/">
-        <h2 class="post-title">
-            Hexo-beantech主题博客常用功能配置
-        </h2>
-        <h3 class="post-subtitle">
+                
+<!-- Main Content -->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <!-- 归档列表 -->
             
-        </h3>
-        <div class="post-content-preview">
-            ...
-        </div>
-    </a>
-    
-        <p class="post-meta" style="margin: 10px 0;">
-            Posted by Wang Fei on
-            2019-12-09
-        </p>
-        <div class="tags">
             
-        </div>
-    
 
+             <!-- 归档列表 -->
+
+            
+            <div class="one-tag-list">
+                <span class="fa fa-calendar-times-o listing-seperator" id="2019">
+                    <span class="tag-text">2019</span>
+                </span>
+                <ul>
+                
+                  <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+                 <li >
+                    12-09
+                    <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+                    <a href="/2019/12/09/Hexo-beantech主题博客常用功能配置/" style="color: #0085a1">
+                        <span>
+                            Hexo-beantech主题博客常用功能配置
+                        </span>
+                    </a>
+                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+                </li>
+                
+                  <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+                 <li >
+                    12-09
+                    <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+                    <a href="/2019/12/09/Hexo-beantech主题博客常见bug修复/" style="color: #0085a1">
+                        <span>
+                            Hexo-beantech主题博客常见bug修复
+                        </span>
+                    </a>
+                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+                </li>
+                
+                  <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+                 <li >
+                    12-09
+                    <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+                    <a href="/2019/12/09/基于Hexo-Github-page从零开始搭建个人博客/" style="color: #0085a1">
+                        <span>
+                            基于Hexo+Github page从零开始搭建个人博客
+                        </span>
+                    </a>
+                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+                </li>
+                
+                </ul>
+            </div>
+            
+            <div class="one-tag-list">
+                <span class="fa fa-calendar-times-o listing-seperator" id="2017">
+                    <span class="tag-text">2017</span>
+                </span>
+                <ul>
+                
+                  <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+                 <li >
+                    04-05
+                    <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+                    <a href="/2017/04/05/Ubuntu常用命令/" style="color: #0085a1">
+                        <span>
+                            Ubuntu常用命令
+                        </span>
+                    </a>
+                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+                </li>
+                
+                </ul>
+            </div>
+            
+
+
+        </div>
+    </div>
 </div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2019/12/09/Hexo-beantech主题博客常见bug修复/">
-        <h2 class="post-title">
-            Hexo-beantech主题博客常见bug修复
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            contents无法跳转
-Markdown解析过程中TOC锚电解析问题导致了在博文右侧的contents无法跳转，再点击后，网页在后面多了/#null。修复方法为：
-修改博客根目录的node_modules\hexo-toc\lib\filter.js，将28-31行修改为：
-1234$title.attr('id', id);// $title.children('a').remove()......
-        </div>
-    </a>
-    
-        <p class="post-meta" style="margin: 10px 0;">
-            Posted by Wang Fei on
-            2019-12-09
-        </p>
-        <div class="tags">
-            
-              <a href="/tags/#blog" title="blog">blog</a>
-            
-        </div>
-    
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2019/12/09/基于Hexo-Github-page从零开始搭建个人博客/">
-        <h2 class="post-title">
-            基于Hexo+Github page从零开始搭建个人博客
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            本文介绍一种基于Hexo框架和Github Page服务搭建博客的方法，其中还将原始的Github page指向了自有域名。
-github配置
-
-安装git,ssh
-12$ sudo apt-get install git$ sudo apt-get install ssh
-配置git用户名和邮箱
-12$ git config --global user.name "your name"$ ......
-        </div>
-    </a>
-    
-        <p class="post-meta" style="margin: 10px 0;">
-            Posted by Wang Fei on
-            2019-12-09
-        </p>
-        <div class="tags">
-            
-              <a href="/tags/#Hexo" title="Hexo">Hexo</a>
-            
-        </div>
-    
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2017/04/05/Ubuntu常用命令/">
-        <h2 class="post-title">
-            Ubuntu常用命令
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            复制：cp 文件名 路径
-移动：mv 文件 文件夹
-重命名 ：mv 文件 文件（不存在）；mv 文件夹 文件夹（不存在）
-删除：rm -rf 文件或文件夹（递归强制删除）
-显示当前路径：pwd
-管理员权限：命令加sudo
-进入root模式：sudo su
-安装.deb文件：sudo dpkg -i **.deb
-清理安装文件：sudo apt-get clean
-修复依赖文件：sudo ap......
-        </div>
-    </a>
-    
-        <p class="post-meta" style="margin: 10px 0;">
-            Posted by Wang Fei on
-            2017-04-05
-        </p>
-        <div class="tags">
-            
-              <a href="/tags/#Linux" title="Linux">Linux</a>
-            
-        </div>
-    
-
-</div>
-<hr>
-
-
-
-<!-- Pager -->
-
-<ul class="pager">
-    
-    
-</ul>
-
-
 
                 <!-- 如果开启评论功能 -->
                 
