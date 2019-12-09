@@ -18,7 +18,7 @@
         
     </title>
 
-    <link rel="canonical" href="http://yoursite-url/2019/12/08/基于Hexo-Github-page从零开始搭建个人博客/">
+    <link rel="canonical" href="http://yoursite-url/2019/12/09/基于Hexo-Github-page从零开始搭建个人博客/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -69,7 +69,7 @@
 <style type="text/css">
     header.intro-header{
         
-            background-image: url('undefined')
+            background-image: url('Demo.png')
             /*post*/
         
     }
@@ -90,14 +90,14 @@
                     <div class="post-heading">
                         <div class="tags">
                             
-                              <a class="tag" href="/tags/#博客搭建" title="博客搭建">博客搭建</a>
+                              <a class="tag" href="/tags/#Hexo" title="Hexo">Hexo</a>
                             
                         </div>
                         <h1>基于Hexo+Github page从零开始搭建个人博客</h1>
                         <h2 class="subheading"></h2>
                         <span class="meta">
                             Posted by Wang Fei on
-                            2019-12-08
+                            2019-12-09
                         </span>
                     </div>
                 
@@ -214,11 +214,11 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                <p>本文介绍一种基于Hexo框架和Github Page服务搭建博客的方法，其中还将原始的Github page指向了自有域名</p>
-<p>本文结构</p>
+                <p>本文介绍一种基于Hexo框架和Github Page服务搭建博客的方法，其中还将原始的Github page指向了自有域名<br>
+本章结构</p>
 <ul>
 <li><a href="#github">github安装与配置</a></li>
-<li><a href="#domain">自有域名配置</a></li>
+<li><a href="#domain">自有域名购买与配置</a></li>
 <li><a href="#hexo">Hexo框架使用</a></li>
 </ul>
 <div id="github"></div>  
@@ -236,29 +236,22 @@
 <p>more Info <a href="https://help.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh" target="_blank" rel="noopener">Github SSH文档</a>.</p>
 <p>配置完Github后，<a href="http://xn--Githubxxx-4s4oo11ie9a.github.io" target="_blank" rel="noopener">创建Github库xxx.github.io</a>，其中Github <a href="http://xn--Pagexx-zy7ir11bz6wqxcb44gnuii73h.github.io" target="_blank" rel="noopener">Page库的名称必须为xx.github.io</a></p>
 <div id="domain"></div>  
-<h2><span id="自有域名配置">自有域名配置</span></h2>
-<h3><span id="选购域名">选购域名</span></h3>
-<p>若不想使用Github Page原始域名，可通过万网或godaddy购买域名，由于国内备案麻烦谨慎购买.cn域名，<a href="http://xn--ml5a.xn--com-t33er8otolqqp0g3aog0b.cc" target="_blank" rel="noopener">除.com常见的域名有.cc</a>，.me，.top，.club等。</p>
-<h3><span id="域名解析">域名解析</span></h3>
+<h2><span id="使用自有域名">使用自有域名</span></h2>
 <ol>
+<li>万网或godaddy购买域名，由于国内备案麻烦谨慎购买.cn域名，<a href="http://xn--ml5a.xn--com-t33er8otolqqp0g3aog0b.cc" target="_blank" rel="noopener">除.com常见的域名有.cc</a>，.me，.top，.club等。</li>
 <li>万网域名自动使用hichina云解析(若使用godaddy，为了加快解析速度，防止被墙，可将 DNS 服务器可设置为为DNSPod)</li>
-<li>添加两条解析。主机记录@，记录类型CNAME，解析线路默认，<a href="http://xn--littlepeanut-vv0t340oob9i.github.io" target="_blank" rel="noopener">记录值littlepeanut.github.io</a>.，TTL1小时；主机记录www，记录类型A，解析线路默认，记录值185.199.109.153，TTL1小时(主机IP可直接ping域名得到)</li>
-</ol>
-<h3><span id="向github-page中添加自有域名">向Github Page中添加自有域名</span></h3>
-<p>在博客中source和public中添加CNAME，记录域名littlepeanut.top，将本地和Github Page上的Hexo绑定到自有域名。</p>
-<h3><span id="域名相关问题">域名相关问题</span></h3>
-<ol>
+<li>添加两条解析，使得访问“<a href="http://xxx.com" target="_blank" rel="noopener">xxx.com</a>”和“<a href="http://www.xxx.com" target="_blank" rel="noopener">www.xxx.com</a>”时均能够解析域名<br>
+主机记录@，记录类型CNAME，解析线路默认，<a href="http://xn--littlepeanut-vv0t340oob9i.github.io" target="_blank" rel="noopener">记录值littlepeanut.github.io</a>.，TTL1小时；主机记录www，记录类型A，解析线路默认，记录值185.199.109.153，TTL1小时(主机IP可直接ping域名得到)</li>
 <li>今后可根据需要添加二级域名</li>
+<li>在博客中source和public中添加CNAME，记录域名littlepeanut.top，将本地和Github Page上的Hexo绑定到自有域名</li>
 <li>若在Github Page中使用自有域名，一般在一天后才能在库的Setting中开启HTTPS</li>
 </ol>
 <div id="hexo"></div>  
-<h2><span id="hexo配置与使用">Hexo配置与使用</span></h2>
-<p>Hexo是一个常见的静态博客框架.</p>
-<h3><span id="hexo安装">hexo安装</span></h3>
-<p>首先参考 <a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">Hexo中文文档</a>安装Hexo，注意文档中提到在安装时尽量不要使用sudo<br>
+<h2><span id="hexo使用">Hexo使用</span></h2>
+<p>Hexo是一个常见的静态博客框架.<br>
+首先参考 <a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">Hexo中文文档</a>安装Hexo，注意文档中提到在安装时尽量不要使用sudo<br>
 安装npm和Node.js，验证</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ node -v </span><br><span class="line">$ npm -v</span><br></pre></td></tr></table></figure>
-<h3><span id="hexo使用">hexo使用</span></h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ node -v </span><br><span class="line">$ npm -v</span><br><span class="line">$ npx -v</span><br></pre></td></tr></table></figure>
 <p>下面初始化博客</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init myblog</span><br></pre></td></tr></table></figure>
 <p>安装git管理扩展</p>
@@ -270,22 +263,20 @@
 <p>启动服务，可本地预览</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo s</span><br></pre></td></tr></table></figure>
 <p>部署</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo d</span><br></pre></td></tr></table></figure>
-<h3><span id="hexo配置文件修改">hexo配置文件修改</span></h3>
-<p>修改配置文件_config.yml。首先更改url和root，若不修改，虽然在本地服务网页能够正常显示，但由于部署后无法识别css等文件导致网页仅显示文字，具体修改如下：<br>
-如果域名格式是https://xxx.com:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+<p>修改配置文件_config.yml，首先更改url和root，若不修改，即使在本地服务网页能够正常显示，部署后仍无法识别css等文件，具体修改规则如下：<br>
+如果域名是https://xxx.com：</p>
 <figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">url:</span> <span class="string">https:</span><span class="comment">//xxx.com/</span></span><br><span class="line"><span class="string">root:</span> /</span><br></pre></td></tr></table></figure>
-<p>如果域名格式是https://xxx.com/blog:</p>
+<p>如果域名是https://xxx.com/blog：</p>
 <figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">url:</span> <span class="string">https:</span><span class="comment">//xxx.com/blog</span></span><br><span class="line"><span class="string">root:</span> /blog</span><br></pre></td></tr></table></figure>
-<p>如果域名格式是https://yourID.github.io/blog:</p>
+<p>如果域名是https://yourID.github.io/blog：</p>
 <figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">url:</span> <span class="string">https:</span><span class="comment">//yourID.github.io/blog</span></span><br><span class="line"><span class="string">root:</span> /blog</span><br></pre></td></tr></table></figure>
-<p>如果域名格式是https://yourID.github.io:</p>
+<p>如果域名是https://yourID.github.io：</p>
 <figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">url:</span> <span class="string">https:</span><span class="comment">//yourID.github.io/blog</span></span><br><span class="line"><span class="string">root:</span> <span class="regexp">/yourID.github.io/</span></span><br></pre></td></tr></table></figure>
 <p>同样还须在_config.yml中设置部署的git库地址</p>
 <figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">deploy</span>:</span><br><span class="line">  <span class="attribute">type</span>: git</span><br><span class="line">  <span class="attribute">repo</span>: <span class="attribute">https</span>:<span class="comment">//github.com/feiwww/littlepeanut.github.io.git</span></span><br><span class="line">  <span class="attribute">branch</span>: master</span><br></pre></td></tr></table></figure>
-<h3><span id="其他常用hexo命令">其他常用Hexo命令</span></h3>
+<p>其他常用Hexo命令</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ npm update hexo -g <span class="comment">#升级 </span></span><br><span class="line">$ hexo server <span class="comment">#Hexo会监视文件变动并自动更新，无须重启服务器</span></span><br><span class="line">$ hexo server -s <span class="comment">#静态模式</span></span><br><span class="line">$ hexo server -p 5000 <span class="comment">#更改端口</span></span><br><span class="line">$ hexo server -i 192.168.1.1 <span class="comment">#自定义 IP</span></span><br><span class="line">$ hexo clean <span class="comment">#清除缓存，若是网页正常情况下可以忽略这条命令</span></span><br></pre></td></tr></table></figure>
-<h3><span id="hexo博客更新">hexo博客更新</span></h3>
 <p>在一般情况下更新博客时，重新生成下静态博客并部署到Github上即可，使用的操作如下：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean</span><br><span class="line">$ hexo g</span><br><span class="line">$ hexo d</span><br></pre></td></tr></table></figure>
                 
@@ -321,6 +312,17 @@
             <!-- Tabe of Content -->
             <!-- Table of Contents -->
 
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">github配置</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">使用自有域名</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">Hexo使用</span></a></li></ol>
+        
+        </div>
+      </aside>
+    
+
                 
             <!-- Sidebar Container -->
             <div class="
@@ -335,7 +337,7 @@
                     <h5><a href="/tags/">FEATURED TAGS</a></h5>
                     <div class="tags">
                        
-                          <a class="tag" href="/tags/#博客搭建" title="博客搭建">博客搭建</a>
+                          <a class="tag" href="/tags/#Hexo" title="Hexo">Hexo</a>
                         
                     </div>
                 </section>
@@ -364,8 +366,8 @@
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES * * */
     var disqus_shortname = "your-disqus-ID";
-    var disqus_identifier = "http://yoursite-url/2019/12/08/基于Hexo-Github-page从零开始搭建个人博客/";
-    var disqus_url = "http://yoursite-url/2019/12/08/基于Hexo-Github-page从零开始搭建个人博客/";
+    var disqus_identifier = "http://yoursite-url/2019/12/09/基于Hexo-Github-page从零开始搭建个人博客/";
+    var disqus_url = "http://yoursite-url/2019/12/09/基于Hexo-Github-page从零开始搭建个人博客/";
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

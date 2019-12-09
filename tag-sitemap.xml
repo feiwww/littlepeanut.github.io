@@ -3,22 +3,15 @@
 
 
     <url>
+        <loc>http://yoursite-url/tags/Hexo/</loc>
+        <lastmod>2019-12-09T03:42:48.377Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>http://yoursite-url/tags/Blog/</loc>
         <lastmod>2019-12-09T01:59:56.312Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://yoursite-url/tags/Hexo/</loc>
-        <lastmod>2019-12-09T01:59:56.312Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://yoursite-url/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</loc>
-        <lastmod>2019-12-08T15:02:31.773Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
