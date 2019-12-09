@@ -8,8 +8,16 @@
     </url>
 
     <url>
+        <loc>http://yoursite-url/2019/12/09/Hexo-beantech%E4%B8%BB%E9%A2%98%E5%8D%9A%E5%AE%A2%E5%B8%B8%E7%94%A8%E5%8A%9F%E8%83%BD%E9%85%8D%E7%BD%AE/</loc>
+        <lastmod>2019-12-09T12:22:31.273Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://yoursite-url/2019/12/09/Hexo-beantech%E4%B8%BB%E9%A2%98%E5%8D%9A%E5%AE%A2%E5%B8%B8%E8%A7%81bug%E4%BF%AE%E5%A4%8D/</loc>
-        <lastmod>2019-12-09T11:51:42.875Z</lastmod>
+        <lastmod>2019-12-09T12:10:10.036Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -17,15 +25,7 @@
 
     <url>
         <loc>http://yoursite-url/2019/12/09/%E5%9F%BA%E4%BA%8EHexo-Github-page%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</loc>
-        <lastmod>2019-12-09T11:49:08.360Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://yoursite-url/2019/12/09/Hexo-beantech%E4%B8%BB%E9%A2%98%E5%8D%9A%E5%AE%A2%E5%B8%B8%E7%94%A8%E5%8A%9F%E8%83%BD%E9%85%8D%E7%BD%AE/</loc>
-        <lastmod>2019-12-09T11:34:21.393Z</lastmod>
+        <lastmod>2019-12-09T12:09:49.416Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 

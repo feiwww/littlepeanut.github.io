@@ -90,7 +90,7 @@
                     <div class="post-heading">
                         <div class="tags">
                             
-                              <a class="tag" href="/tags/#blog" title="blog">blog</a>
+                              <a class="tag" href="/tags/#Blog" title="Blog">Blog</a>
                             
                         </div>
                         <h1>Hexo-beantech主题博客常见bug修复</h1>
@@ -144,14 +144,14 @@
 
                         
                         <li>
-                            <a href="/about/">About</a>
+                            <a href="/archive/">Archives</a>
                         </li>
                         
                     
 
                         
                         <li>
-                            <a href="/archive/">Archives</a>
+                            <a href="/about/">About</a>
                         </li>
                         
                     
@@ -236,15 +236,16 @@
                         </li>
                     
                 </ul>
-		<!--PC版-->
-		<div id="SOHUCS" ></div>
-		<script charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/changyan.js" ></script>
-		<script type="text/javascript">
-			window.changyan.api.config({
-				appid: 'cyuzPPYBx',
-				conf: 'prod_5e1680173ac2f298aa36381ba9396f32'
-			});
-		</script>
+                
+                <!--畅言云评论PC版-->
+                <div id="SOHUCS" ></div>
+                <script charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/changyan.js" ></script>
+                <script type="text/javascript">
+                    window.changyan.api.config({
+                        appid: 'cyuzPPYBx',
+                        conf: 'prod_5e1680173ac2f298aa36381ba9396f32'
+                    });
+                </script>
 
                 <!-- duoshuo Share start -->
                 
@@ -255,10 +256,6 @@
                 <!-- 多说评论框 end -->
 
                 <!-- disqus comment start -->
-                
-                    <div class="comment">
-                        <div id="disqus_thread" class="disqus-thread"></div>
-                    </div>
                 
                 <!-- disqus comment end -->
             </div>
@@ -291,7 +288,7 @@
                     <h5><a href="/tags/">FEATURED TAGS</a></h5>
                     <div class="tags">
                        
-                          <a class="tag" href="/tags/#blog" title="blog">blog</a>
+                          <a class="tag" href="/tags/#Blog" title="Blog">Blog</a>
                         
                     </div>
                 </section>
@@ -315,21 +312,6 @@
 
 
 
-
-<!-- disqus embedded js code start (one page only need to embed once) -->
-<script type="text/javascript">
-    /* * * CONFIGURATION VARIABLES * * */
-    var disqus_shortname = "your-disqus-ID";
-    var disqus_identifier = "http://yoursite-url/2019/12/09/Hexo-beantech主题博客常见bug修复/";
-    var disqus_url = "http://yoursite-url/2019/12/09/Hexo-beantech主题博客常见bug修复/";
-
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-</script>
-<!-- disqus embedded js code start end -->
 
 
 
@@ -368,6 +350,7 @@
     }
 </style>
 
+<script src="node_modules/zooming/build/zooming.min.js"></script>
 
 
     <!-- Footer -->

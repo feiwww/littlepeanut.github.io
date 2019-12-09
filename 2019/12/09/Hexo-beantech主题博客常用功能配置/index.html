@@ -69,7 +69,7 @@
 <style type="text/css">
     header.intro-header{
         
-            background-image: url('null')
+            background-image: url('Demo.png')
             /*post*/
         
     }
@@ -89,6 +89,8 @@
                 
                     <div class="post-heading">
                         <div class="tags">
+                            
+                              <a class="tag" href="/tags/#Blog" title="Blog">Blog</a>
                             
                         </div>
                         <h1>Hexo-beantech主题博客常用功能配置</h1>
@@ -142,14 +144,14 @@
 
                         
                         <li>
-                            <a href="/about/">About</a>
+                            <a href="/archive/">Archives</a>
                         </li>
                         
                     
 
                         
                         <li>
-                            <a href="/archive/">Archives</a>
+                            <a href="/about/">About</a>
                         </li>
                         
                     
@@ -212,7 +214,10 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                
+                <h1 id="添加畅言云评论">添加畅言云评论</h1>
+<p>通过畅言云评论可以实现评论等功能，首先须在<a href="http://changyan.kuaizhan.com/" target="_blank" rel="noopener">畅言官网</a>进行注册，进入云评论-安装云评论-通用代码安装中将配置代码复制添加到\themes\beantech\layout\post.ej中，具体位置如下图所示。<br>
+<img src="changyan.png" data-action="zoom"></p>
+
                 
 
                 <hr>
@@ -225,15 +230,16 @@
                         </li>
                     
                 </ul>
-		<!--PC版-->
-		<div id="SOHUCS" ></div>
-		<script charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/changyan.js" ></script>
-		<script type="text/javascript">
-			window.changyan.api.config({
-				appid: 'cyuzPPYBx',
-				conf: 'prod_5e1680173ac2f298aa36381ba9396f32'
-			});
-		</script>
+                
+                <!--畅言云评论PC版-->
+                <div id="SOHUCS" ></div>
+                <script charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/changyan.js" ></script>
+                <script type="text/javascript">
+                    window.changyan.api.config({
+                        appid: 'cyuzPPYBx',
+                        conf: 'prod_5e1680173ac2f298aa36381ba9396f32'
+                    });
+                </script>
 
                 <!-- duoshuo Share start -->
                 
@@ -244,10 +250,6 @@
                 <!-- 多说评论框 end -->
 
                 <!-- disqus comment start -->
-                
-                    <div class="comment">
-                        <div id="disqus_thread" class="disqus-thread"></div>
-                    </div>
                 
                 <!-- disqus comment end -->
             </div>
@@ -260,7 +262,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-          <ol class="nav">none</ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#添加畅言云评论"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">添加畅言云评论</span></a></li></ol>
         
         </div>
       </aside>
@@ -280,6 +282,8 @@
                     <h5><a href="/tags/">FEATURED TAGS</a></h5>
                     <div class="tags">
                        
+                          <a class="tag" href="/tags/#Blog" title="Blog">Blog</a>
+                        
                     </div>
                 </section>
                 
@@ -302,21 +306,6 @@
 
 
 
-
-<!-- disqus embedded js code start (one page only need to embed once) -->
-<script type="text/javascript">
-    /* * * CONFIGURATION VARIABLES * * */
-    var disqus_shortname = "your-disqus-ID";
-    var disqus_identifier = "http://yoursite-url/2019/12/09/Hexo-beantech主题博客常用功能配置/";
-    var disqus_url = "http://yoursite-url/2019/12/09/Hexo-beantech主题博客常用功能配置/";
-
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-</script>
-<!-- disqus embedded js code start end -->
 
 
 
@@ -355,6 +344,7 @@
     }
 </style>
 
+<script src="node_modules/zooming/build/zooming.min.js"></script>
 
 
     <!-- Footer -->
