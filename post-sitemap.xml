@@ -8,48 +8,8 @@
     </url>
 
     <url>
-        <loc>http://yoursite-url/2017/04/08/Ubuntu%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/</loc>
-        <lastmod>2019-12-10T07:54:50.869Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://yoursite-url/2018/05/15/Ubuntu18-04%E5%AE%89%E8%A3%85%E6%90%9C%E7%8B%97%E8%BE%93%E5%85%A5%E6%B3%95/</loc>
-        <lastmod>2019-12-10T07:42:25.588Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://yoursite-url/2019/01/25/%E4%BF%AE%E5%A4%8Dsudo%E5%91%BD%E4%BB%A4%E5%93%8D%E5%BA%94%E5%BE%88%E6%85%A2%E9%97%AE%E9%A2%98/</loc>
-        <lastmod>2019-12-10T07:41:35.253Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>http://yoursite-url/2019/03/13/scipy%E7%A8%80%E7%96%8F%E7%9F%A9%E9%98%B5%E7%9A%84%E5%AD%98%E5%82%A8%E6%A0%BC%E5%BC%8F/</loc>
-        <lastmod>2019-12-10T07:41:00.649Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://yoursite-url/2018/12/04/Ubuntu18-04%E9%85%8D%E7%BD%AE%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%8E%AF%E5%A2%83Pytorch1-0-CUDA10-NVIDA%E9%A9%B1%E5%8A%A8/</loc>
-        <lastmod>2019-12-10T07:40:25.642Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://yoursite-url/2019/01/07/NTFS%E5%88%86%E5%8C%BA%E4%B8%8D%E8%83%BD%E8%AF%BB%E5%86%99%E4%BF%AE%E5%A4%8D%E6%96%B9%E6%B3%95/</loc>
-        <lastmod>2019-12-10T07:12:11.940Z</lastmod>
+        <lastmod>2019-12-10T08:59:19.740Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -57,31 +17,23 @@
 
     <url>
         <loc>http://yoursite-url/2017/10/07/%E8%A7%A3%E5%86%B3windows%E5%92%8Cubuntu%E5%8F%8C%E7%B3%BB%E7%BB%9F%E6%97%B6%E9%97%B4%E9%94%99%E8%AF%AF%E9%97%AE%E9%A2%98/</loc>
-        <lastmod>2019-12-10T02:53:30.101Z</lastmod>
+        <lastmod>2019-12-10T08:58:29.240Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
     </url>
 
     <url>
-        <loc>http://yoursite-url/2019/12/09/%E5%9F%BA%E4%BA%8EHexo-Github-page%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</loc>
-        <lastmod>2019-12-10T02:43:37.047Z</lastmod>
+        <loc>http://yoursite-url/2019/01/25/%E4%BF%AE%E5%A4%8Dsudo%E5%91%BD%E4%BB%A4%E5%93%8D%E5%BA%94%E5%BE%88%E6%85%A2%E9%97%AE%E9%A2%98/</loc>
+        <lastmod>2019-12-10T08:58:18.797Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
     </url>
 
     <url>
-        <loc>http://yoursite-url/2019/12/09/Hexo-beantech%E4%B8%BB%E9%A2%98%E5%8D%9A%E5%AE%A2%E5%B8%B8%E7%94%A8%E5%8A%9F%E8%83%BD%E9%85%8D%E7%BD%AE/</loc>
-        <lastmod>2019-12-09T14:12:28.045Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://yoursite-url/2019/12/09/Hexo-beantech%E4%B8%BB%E9%A2%98%E5%8D%9A%E5%AE%A2%E5%B8%B8%E8%A7%81bug%E4%BF%AE%E5%A4%8D/</loc>
-        <lastmod>2019-12-09T12:10:10.036Z</lastmod>
+        <loc>http://yoursite-url/2017/04/08/Ubuntu%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/</loc>
+        <lastmod>2019-12-10T08:58:11.565Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -89,7 +41,55 @@
 
     <url>
         <loc>http://yoursite-url/2017/04/05/Ubuntu%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</loc>
-        <lastmod>2019-12-09T09:11:05.664Z</lastmod>
+        <lastmod>2019-12-10T08:58:04.085Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite-url/2018/12/04/Ubuntu18-04%E9%85%8D%E7%BD%AE%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%8E%AF%E5%A2%83Pytorch1-0-CUDA10-NVIDA%E9%A9%B1%E5%8A%A8/</loc>
+        <lastmod>2019-12-10T08:57:56.145Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite-url/2018/05/15/Ubuntu18-04%E5%AE%89%E8%A3%85%E6%90%9C%E7%8B%97%E8%BE%93%E5%85%A5%E6%B3%95/</loc>
+        <lastmod>2019-12-10T08:57:48.749Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite-url/2019/01/07/NTFS%E5%88%86%E5%8C%BA%E4%B8%8D%E8%83%BD%E8%AF%BB%E5%86%99%E4%BF%AE%E5%A4%8D%E6%96%B9%E6%B3%95/</loc>
+        <lastmod>2019-12-10T08:57:38.009Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite-url/2019/12/09/%E5%9F%BA%E4%BA%8EHexo-Github-page%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</loc>
+        <lastmod>2019-12-10T08:56:01.947Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite-url/2019/12/09/Hexo-beantech%E4%B8%BB%E9%A2%98%E5%8D%9A%E5%AE%A2%E5%B8%B8%E7%94%A8%E5%8A%9F%E8%83%BD%E9%85%8D%E7%BD%AE/</loc>
+        <lastmod>2019-12-10T08:55:44.068Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite-url/2019/12/09/Hexo-beantech%E4%B8%BB%E9%A2%98%E5%8D%9A%E5%AE%A2%E5%B8%B8%E8%A7%81bug%E4%BF%AE%E5%A4%8D/</loc>
+        <lastmod>2019-12-10T08:48:39.829Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
