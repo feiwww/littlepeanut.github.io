@@ -14,11 +14,11 @@
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <title>
         
-          Ubuntu18.04安装搜狗输入法 - LittlePeanut
+          Ubuntu18.04配置深度学习环境Pytorch1.0+CUDA10+NVIDA驱动 - LittlePeanut
         
     </title>
 
-    <link rel="canonical" href="http://yoursite-url/2019/12/10/Ubuntu18-04安装搜狗输入法/">
+    <link rel="canonical" href="http://yoursite-url/2018/12/04/Ubuntu18-04配置深度学习环境Pytorch1-0-CUDA10-NVIDA驱动/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -93,11 +93,11 @@
                               <a class="tag" href="/tags/#Linux" title="Linux">Linux</a>
                             
                         </div>
-                        <h1>Ubuntu18.04安装搜狗输入法</h1>
+                        <h1>Ubuntu18.04配置深度学习环境Pytorch1.0+CUDA10+NVIDA驱动</h1>
                         <h2 class="subheading"></h2>
                         <span class="meta">
                             Posted by Wang Fei on
-                            2019-12-10
+                            2018-12-04
                         </span>
                     </div>
                 
@@ -144,14 +144,14 @@
 
                         
                         <li>
-                            <a href="/about/">About</a>
+                            <a href="/archive/">Archives</a>
                         </li>
                         
                     
 
                         
                         <li>
-                            <a href="/archive/">Archives</a>
+                            <a href="/about/">About</a>
                         </li>
                         
                     
@@ -214,24 +214,55 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                <p>最近更新了Ubuntu18.04，一直在使用搜狗再安装搜狗输入法时遇到了一些问题，网上搜到的资料很多都需要重新打包，最新版的搜狗输入法已经不需要重新打包，直接安装即可，在此将成功安装的步骤分享。</p>
-<h1 id="安装中文语言">安装中文语言</h1>
-<p>由于安装了英文系统，因此首先需要安装中文语言，Setting-Region&amp;Language中点击“Manage Installed Languages”，在弹出的对话框中可以通过“Install/Remove Language”安装简体中文。</p>
-<h1 id="下载搜狗输入法">下载搜狗输入法</h1>
-<p>下载linux版本，官方地址https://pinyin.sogou.com/linux/</p>
-<h1 id="安装搜狗输入法">安装搜狗输入法</h1>
-<p>进入下载的deb包路径<br>
-sudo dpkg -i 你的deb包名称<br>
-此时有可能安装不成功，调用apt的自动修复,自动安装缺少的包<br>
-sudo apt-get install -f<br>
-此时已经安装了fcitx，重启。</p>
-<h1 id="配置输入法">配置输入法</h1>
+                <p>如果想要使用GPU版本的Pytorch，需要先确保安装NVIDIA驱动、CUDA和cuDNN</p>
+<h1 id="安装nvida-gpu显卡驱动">安装NVIDA GPU显卡驱动</h1>
 <ol>
-<li>重启后，在上述“Manage Installed Languages”（即Language Support设置窗口中），将“Keyboard input method system”设置为“fcitx”。</li>
-<li>在系统中搜索fcitx configuration，点击左下角添加输入法，在弹出的对话框中将Only Show Current Language取消，即可看到sogou Pinyin，选择添加即可。</li>
+<li>查询显卡型号</li>
+<li>官网下载适合自己显卡的驱动.run文件</li>
+<li>卸载原有的NVIDIA驱动，sudo apt-get remove --purge nvidia*    sudo apt-get autoremove；如果是使用官网下载的.run驱动，找到安装文件sudo ./*.run --uninstall</li>
+<li>禁用nouveau驱动sudo gedit /etc/modprobe.d/blacklist.conf，在末尾添加:blacklist nouveau，然后执行：sudo update-initramfs -u，重启进入命令行界面后执行：lsmod | grep nouveau。如果没有屏幕输出，说明禁用nouveau成功。</li>
+<li>进入Ctrl+Alt+F3进入命令行模式，关闭gdm服务sudo /etc/init.d/gdm3 stop</li>
+<li>找到下载的驱动安装，sudo ./*****.sh -no-opengl-files(务必加上此参数)</li>
+<li>重启sudo reboot</li>
 </ol>
-<h1 id="重启完成">重启完成</h1>
-<p>到此为止搜狗输入法应该能够正常使用。</p>
+<h1 id="安装cuda101">安装CUDA10.1</h1>
+<ol>
+<li><a href="https://developer.nvidia.com/cuda-downloads" target="_blank" rel="noopener">官网</a>下载linux, x86_64, Ubuntu, 18.04(或17.04)的runfile</li>
+<li>安装</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo sh cuda_10.0.130_410.48_linux.run</span><br></pre></td></tr></table></figure>
+<p>按空格读完声明，在安装过程中会询问是否安装显卡驱动，我们已经安装所以将驱动项去掉即可。安装完成后可能会有警告，提示samplees缺少一些包，暂时忽略，没有影响。</p>
+<ol start="3">
+<li>配置环境变量</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo gedit ~/.bashrc</span><br></pre></td></tr></table></figure>
+<p>在.bashrc中添加下面Path</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># add cuda</span></span><br><span class="line"><span class="builtin-name">export</span> <span class="attribute">CUDA_HOME</span>=/usr/local/cuda </span><br><span class="line"><span class="builtin-name">export</span> <span class="attribute">PATH</span>=PATH:CUDA_HOME/bin </span><br><span class="line"><span class="builtin-name">export</span> <span class="attribute">LD_LIBRARY_PATH</span>=/usr/local/cuda-10.1/lib64&#123;LD_LIBRARY_PATH:+:&#123;LD_LIBRARY_PATH&#125;&#125;</span><br></pre></td></tr></table></figure>
+<p>source使其生效</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">source</span> ~/.bashrc</span><br></pre></td></tr></table></figure>
+<ol start="4">
+<li>验证</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ nvcc -V</span><br></pre></td></tr></table></figure>
+<ol start="5">
+<li>编译sample验证</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> /usr/<span class="built_in">local</span>/cuda/samples/1_Utilities/deviceQuery</span><br><span class="line">$ sudo make</span><br><span class="line">$ ./deviceQuery</span><br></pre></td></tr></table></figure>
+<p>编译成功说明安装完成。</p>
+<ol start="6">
+<li>显示驱动信息和CUDA版本</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ nvidia-smi</span><br></pre></td></tr></table></figure>
+<h1 id="安装cudnn">安装cuDNN</h1>
+<p>官网注册下载,下载uDNN v7.5.0 (Feb 25, 2019), for CUDA 10.1，注意与CUDA版本保持对应！<br>
+解压文件后，复制相应文件至cuda中并更改权限,具体如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ sudo cp cuda/include/cudnn.h /usr/<span class="built_in">local</span>/cuda/include/ </span><br><span class="line">$ sudo cp cuda/lib64/libcudnn* /usr/<span class="built_in">local</span>/cuda/lib64/ </span><br><span class="line">$ sudo chmod a+r /usr/<span class="built_in">local</span>/cuda/include/cudnn.h </span><br><span class="line">$ sudo chmod a+r /usr/<span class="built_in">local</span>/cuda/lib64/libcudnn*</span><br></pre></td></tr></table></figure>
+<p>验证查看CuDNN版本</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cat /usr/<span class="built_in">local</span>/cuda/include/cudnn.h | grep CUDNN_MAJOR -A 2</span><br></pre></td></tr></table></figure>
+<h1 id="安装pytorch">安装Pytorch</h1>
+<p>Pytorch官网下载安装pip或conda版本的pytorch<br>
+注意Pytorch版本需要和CUDA版本相对应！<br>
+Stable, Linux, Pip, Python3.6, CUDA10</p>
 
                 
 
@@ -239,9 +270,13 @@ sudo apt-get install -f<br>
                 <!-- Pager -->
                 <ul class="pager">
                     
+                        <li class="previous">
+                            <a href="/2019/01/07/NTFS分区不能读写修复方法/" data-toggle="tooltip" data-placement="top" title="NTFS分区不能读写修复方法">&larr; Previous Post</a>
+                        </li>
+                    
                     
                         <li class="next">
-                            <a href="/2019/12/09/Hexo-beantech主题博客常用功能配置/" data-toggle="tooltip" data-placement="top" title="Hexo-beantech主题博客常用功能配置">Next Post &rarr;</a>
+                            <a href="/2018/05/15/Ubuntu18-04安装搜狗输入法/" data-toggle="tooltip" data-placement="top" title="Ubuntu18.04安装搜狗输入法">Next Post &rarr;</a>
                         </li>
                     
                 </ul>
@@ -277,7 +312,7 @@ sudo apt-get install -f<br>
         <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#安装中文语言"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">安装中文语言</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#下载搜狗输入法"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">下载搜狗输入法</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#安装搜狗输入法"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">安装搜狗输入法</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#配置输入法"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">配置输入法</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#重启完成"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">重启完成</span></a></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#安装nvida-gpu显卡驱动"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">安装NVIDA GPU显卡驱动</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#安装cuda101"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">安装CUDA10.1</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#安装cudnn"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">安装cuDNN</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#安装pytorch"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">安装Pytorch</span></a></li></ol>
         
         </div>
       </aside>

@@ -14,11 +14,11 @@
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <title>
         
-          Tags - LittlePeanut
+          Ubuntu18.04安装搜狗输入法 - LittlePeanut
         
     </title>
 
-    <link rel="canonical" href="http://yoursite-url/tags/">
+    <link rel="canonical" href="http://yoursite-url/2018/05/15/Ubuntu18-04安装搜狗输入法/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -69,8 +69,8 @@
 <style type="text/css">
     header.intro-header{
         
-            background-image: url('/img/header_img/tag-bg.png')
-            /*page*/
+            background-image: url('Demo.png')
+            /*post*/
         
     }
     
@@ -87,10 +87,18 @@
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 
-                    <div class="site-heading">
-                        <h1>Tags</h1>
-                        <!--<hr class="small">-->
-                        <span class="subheading">Hey, this is Tags.</span>
+                    <div class="post-heading">
+                        <div class="tags">
+                            
+                              <a class="tag" href="/tags/#Linux" title="Linux">Linux</a>
+                            
+                        </div>
+                        <h1>Ubuntu18.04安装搜狗输入法</h1>
+                        <h2 class="subheading"></h2>
+                        <span class="meta">
+                            Posted by Wang Fei on
+                            2018-05-15
+                        </span>
                     </div>
                 
 
@@ -193,215 +201,169 @@
 
 
     <!-- Main Content -->
-    <!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            <!-- 标签云 -->
-            <div id='tag_cloud' class="tags">
-                
-                    <a href="#Blog" title="Blog" rel="3">Blog</a>
-                
-                    <a href="#Linux" title="Linux" rel="7">Linux</a>
-                
-                    <a href="#数据结构" title="数据结构" rel="1">数据结构</a>
-                
-            </div>
+    <!-- Modify by Yu-Hsuan Yen -->
 
-            <!-- 标签列表 -->
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
 
-            
-            <div class="one-tag-list">
-                <span class="fa fa-tag listing-seperator" id="Blog">
-                    <span class="tag-text">Blog</span>
-                </span>
+            <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <p>最近更新了Ubuntu18.04，一直在使用搜狗再安装搜狗输入法时遇到了一些问题，网上搜到的资料很多都需要重新打包，最新版的搜狗输入法已经不需要重新打包，直接安装即可，在此将成功安装的步骤分享。</p>
+<h1 id="安装中文语言">安装中文语言</h1>
+<p>由于安装了英文系统，因此首先需要安装中文语言，Setting-Region&amp;Language中点击“Manage Installed Languages”，在弹出的对话框中可以通过“Install/Remove Language”安装简体中文。</p>
+<h1 id="下载搜狗输入法">下载搜狗输入法</h1>
+<p>下载linux版本，官方地址https://pinyin.sogou.com/linux/</p>
+<h1 id="安装搜狗输入法">安装搜狗输入法</h1>
+<p>进入下载的deb包路径<br>
+sudo dpkg -i 你的deb包名称<br>
+此时有可能安装不成功，调用apt的自动修复,自动安装缺少的包<br>
+sudo apt-get install -f<br>
+此时已经安装了fcitx，重启。</p>
+<h1 id="配置输入法">配置输入法</h1>
+<ol>
+<li>重启后，在上述“Manage Installed Languages”（即Language Support设置窗口中），将“Keyboard input method system”设置为“fcitx”。</li>
+<li>在系统中搜索fcitx configuration，点击左下角添加输入法，在弹出的对话框中将Only Show Current Language取消，即可看到sogou Pinyin，选择添加即可。</li>
+</ol>
+<h1 id="重启完成">重启完成</h1>
+<p>到此为止搜狗输入法应该能够正常使用。</p>
+
                 
-                  <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-                 <div class="post-preview">
-                     <a href="/2019/12/09/Hexo-beantech主题博客常见bug修复/">
-                        <h2 class="post-title">
-                            Hexo-beantech主题博客常见bug修复
-                        </h2>
-                        
-                    </a>
-                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-                </div>
+
                 <hr>
+                <!-- Pager -->
+                <ul class="pager">
+                    
+                        <li class="previous">
+                            <a href="/2018/12/04/Ubuntu18-04配置深度学习环境Pytorch1-0-CUDA10-NVIDA驱动/" data-toggle="tooltip" data-placement="top" title="Ubuntu18.04配置深度学习环境Pytorch1.0+CUDA10+NVIDA驱动">&larr; Previous Post</a>
+                        </li>
+                    
+                    
+                        <li class="next">
+                            <a href="/2017/10/07/解决windows和ubuntu双系统时间错误问题/" data-toggle="tooltip" data-placement="top" title="解决windows和ubuntu双系统时间错误问题">Next Post &rarr;</a>
+                        </li>
+                    
+                </ul>
                 
-                  <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-                 <div class="post-preview">
-                     <a href="/2019/12/09/Hexo-beantech主题博客常用功能配置/">
-                        <h2 class="post-title">
-                            Hexo-beantech主题博客常用功能配置
-                        </h2>
-                        
-                    </a>
-                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-                </div>
-                <hr>
+                <!--畅言云评论PC版-->
+                <div id="SOHUCS" ></div>
+                <script charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/changyan.js" ></script>
+                <script type="text/javascript">
+                    window.changyan.api.config({
+                        appid: 'cyuzPPYBx',
+                        conf: 'prod_5e1680173ac2f298aa36381ba9396f32'
+                    });
+                </script>
+
+                <!-- duoshuo Share start -->
                 
-                  <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-                 <div class="post-preview">
-                     <a href="/2019/12/09/基于Hexo-Github-page从零开始搭建个人博客/">
-                        <h2 class="post-title">
-                            基于Hexo+Github page从零开始搭建个人博客
-                        </h2>
-                        
-                    </a>
-                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-                </div>
-                <hr>
+                <!-- 多说 Share end-->
+
+                <!-- 多说评论框 start -->
                 
-            </div>
-            
-            <div class="one-tag-list">
-                <span class="fa fa-tag listing-seperator" id="Linux">
-                    <span class="tag-text">Linux</span>
-                </span>
+                <!-- 多说评论框 end -->
+
+                <!-- disqus comment start -->
                 
-                  <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-                 <div class="post-preview">
-                     <a href="/2018/05/15/Ubuntu18-04安装搜狗输入法/">
-                        <h2 class="post-title">
-                            Ubuntu18.04安装搜狗输入法
-                        </h2>
-                        
-                    </a>
-                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-                </div>
-                <hr>
-                
-                  <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-                 <div class="post-preview">
-                     <a href="/2018/12/04/Ubuntu18-04配置深度学习环境Pytorch1-0-CUDA10-NVIDA驱动/">
-                        <h2 class="post-title">
-                            Ubuntu18.04配置深度学习环境Pytorch1.0+CUDA10+NVIDA驱动
-                        </h2>
-                        
-                    </a>
-                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-                </div>
-                <hr>
-                
-                  <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-                 <div class="post-preview">
-                     <a href="/2019/01/07/NTFS分区不能读写修复方法/">
-                        <h2 class="post-title">
-                            NTFS分区不能读写修复方法
-                        </h2>
-                        
-                    </a>
-                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-                </div>
-                <hr>
-                
-                  <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-                 <div class="post-preview">
-                     <a href="/2017/04/05/Ubuntu常用命令/">
-                        <h2 class="post-title">
-                            Ubuntu常用命令
-                        </h2>
-                        
-                    </a>
-                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-                </div>
-                <hr>
-                
-                  <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-                 <div class="post-preview">
-                     <a href="/2017/04/08/Ubuntu常用软件安装与配置/">
-                        <h2 class="post-title">
-                            Ubuntu常用软件安装与配置
-                        </h2>
-                        
-                    </a>
-                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-                </div>
-                <hr>
-                
-                  <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-                 <div class="post-preview">
-                     <a href="/2019/01/25/修复sudo命令响应很慢问题/">
-                        <h2 class="post-title">
-                            修复sudo命令响应很慢问题
-                        </h2>
-                        
-                    </a>
-                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-                </div>
-                <hr>
-                
-                  <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-                 <div class="post-preview">
-                     <a href="/2017/10/07/解决windows和ubuntu双系统时间错误问题/">
-                        <h2 class="post-title">
-                            解决windows和ubuntu双系统时间错误问题
-                        </h2>
-                        
-                    </a>
-                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-                </div>
-                <hr>
-                
+                <!-- disqus comment end -->
             </div>
             
-            <div class="one-tag-list">
-                <span class="fa fa-tag listing-seperator" id="数据结构">
-                    <span class="tag-text">数据结构</span>
-                </span>
+            <!-- Tabe of Content -->
+            <!-- Table of Contents -->
+
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#安装中文语言"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">安装中文语言</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#下载搜狗输入法"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">下载搜狗输入法</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#安装搜狗输入法"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">安装搜狗输入法</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#配置输入法"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">配置输入法</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#重启完成"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">重启完成</span></a></li></ol>
+        
+        </div>
+      </aside>
+    
+
                 
-                  <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-                 <div class="post-preview">
-                     <a href="/2019/03/13/scipy稀疏矩阵的存储格式/">
-                        <h2 class="post-title">
-                            scipy稀疏矩阵的存储格式
-                        </h2>
+            <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                       
+                          <a class="tag" href="/tags/#Linux" title="Linux">Linux</a>
                         
-                    </a>
-                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-                </div>
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
                 <hr>
+                <h5>FRIENDS</h5>
+                <ul class="list-inline">
+
+                    
+                        <li><a href="https://rse.buaa.edu.cn/" target="_blank">RSE, BUAA</a></li>
+                    
+                </ul>
                 
             </div>
-            
-
-
         </div>
     </div>
-</div>
+</article>
+
+
+
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'hover',
+          placement: 'left',
+          icon: 'ℬ'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+<script type="text/javascript" src="node_modules/zooming/build/zooming.min.js"></script>
 
 
     <!-- Footer -->

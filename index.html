@@ -136,14 +136,14 @@
 
                         
                         <li>
-                            <a href="/about/">About</a>
+                            <a href="/archive/">Archives</a>
                         </li>
                         
                     
 
                         
                         <li>
-                            <a href="/archive/">Archives</a>
+                            <a href="/about/">About</a>
                         </li>
                         
                     
@@ -210,36 +210,6 @@
             
                 <!-- Main Content -->
 
-
-<div class="post-preview">
-
-    <a href="/2019/12/10/Ubuntu18-04安装搜狗输入法/">
-        <h2 class="post-title">
-            Ubuntu18.04安装搜狗输入法
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            最近更新了Ubuntu18.04，一直在使用搜狗再安装搜狗输入法时遇到了一些问题，网上搜到的资料很多都需要重新打包，最新版的搜狗输入法已经不需要重新打包，直接安装即可，在此将成功安装的步骤分享。
-安装中文语言
-由于安装了英文系统，因此首先需要安装中文语言，Setting-Region&amp;Language中点击“Manage Installed Languages”，在弹出的对话框中可以......
-        </div>
-    </a>
-    
-        <p class="post-meta" style="margin: 10px 0;">
-            Posted by Wang Fei on
-            2019-12-10
-        </p>
-        <div class="tags">
-            
-              <a href="/tags/#Linux" title="Linux">Linux</a>
-            
-        </div>
-    
-
-</div>
-<hr>
 
 <div class="post-preview">
 
@@ -341,6 +311,163 @@ Github
 
 <div class="post-preview">
 
+    <a href="/2019/03/13/scipy稀疏矩阵的存储格式/">
+        <h2 class="post-title">
+            scipy稀疏矩阵的存储格式
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            scipy支持目前主流的稀疏矩阵储存格式，包括bsr_matrix，coo_matrix，csc_matrix，csr_matrix，dia_matrix，dok_matrixlil_matrix，具体参见文档：https://docs.scipy.org/doc/scipy/reference/sparse.html
+COOrdinate format
+仅存储非零元素以及每个非零元素的坐标......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by Wang Fei on
+            2019-03-13
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#数据结构" title="数据结构">数据结构</a>
+            
+        </div>
+    
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/2019/01/25/修复sudo命令响应很慢问题/">
+        <h2 class="post-title">
+            修复sudo命令响应很慢问题
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            背景
+重装系统时不小心将用户名写错，再修改用户名后出现了sudo命令相应很慢的情况，经过了解认定为主机名查询表问题。
+问题原因
+在系统第一次安装时，系统已经自动将127.0.0.1指向了本机名，写入了/etc/hosts文件。hosts文件是Linux系统中一个负责IP地址与域名快速解析的文件，可以定义IP地址和主机名之间的映射，对于服务器类型的linux系统其作用还是不可忽略的。
+解决方法......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by Wang Fei on
+            2019-01-25
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#Linux" title="Linux">Linux</a>
+            
+        </div>
+    
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/2019/01/07/NTFS分区不能读写修复方法/">
+        <h2 class="post-title">
+            NTFS分区不能读写修复方法
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            前段时间Ubuntu系统NTFS分区经常出现不可读写的问题，包括/etc/fstab中自动挂载的分区和未挂载的若干分区。通常情况下，重启电脑进入Windows系统在回到Ubuntu即可解决。
+使用sudo mount -o remount rw *(自动挂载的分区名称)进行可读写的重新挂载，图标上的小锁是去掉了，但还是存在不可读写问题。
+使用ntfsfix修复可解决此问题，具体方法如下：
+
+......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by Wang Fei on
+            2019-01-07
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#Linux" title="Linux">Linux</a>
+            
+        </div>
+    
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/2018/12/04/Ubuntu18-04配置深度学习环境Pytorch1-0-CUDA10-NVIDA驱动/">
+        <h2 class="post-title">
+            Ubuntu18.04配置深度学习环境Pytorch1.0+CUDA10+NVIDA驱动
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            如果想要使用GPU版本的Pytorch，需要先确保安装NVIDIA驱动、CUDA和cuDNN
+安装NVIDA GPU显卡驱动
+
+查询显卡型号
+官网下载适合自己显卡的驱动.run文件
+卸载原有的NVIDIA驱动，sudo apt-get remove --purge nvidia*    sudo apt-get autoremove；如果是使用官网下载的.run驱动，找到安装文件sudo .......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by Wang Fei on
+            2018-12-04
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#Linux" title="Linux">Linux</a>
+            
+        </div>
+    
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/2018/05/15/Ubuntu18-04安装搜狗输入法/">
+        <h2 class="post-title">
+            Ubuntu18.04安装搜狗输入法
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            最近更新了Ubuntu18.04，一直在使用搜狗再安装搜狗输入法时遇到了一些问题，网上搜到的资料很多都需要重新打包，最新版的搜狗输入法已经不需要重新打包，直接安装即可，在此将成功安装的步骤分享。
+安装中文语言
+由于安装了英文系统，因此首先需要安装中文语言，Setting-Region&amp;Language中点击“Manage Installed Languages”，在弹出的对话框中可以......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by Wang Fei on
+            2018-05-15
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#Linux" title="Linux">Linux</a>
+            
+        </div>
+    
+
+</div>
+<hr>
+
+<div class="post-preview">
+
     <a href="/2017/10/07/解决windows和ubuntu双系统时间错误问题/">
         <h2 class="post-title">
             解决windows和ubuntu双系统时间错误问题
@@ -377,30 +504,28 @@ windows系统中BIOS直接作为系统时间。
 
 <div class="post-preview">
 
-    <a href="/2017/04/05/Ubuntu常用命令/">
+    <a href="/2017/04/08/Ubuntu常用软件安装与配置/">
         <h2 class="post-title">
-            Ubuntu常用命令
+            Ubuntu常用软件安装与配置
         </h2>
         <h3 class="post-subtitle">
             
         </h3>
         <div class="post-content-preview">
-            复制：cp 文件名 路径
-移动：mv 文件 文件夹
-重命名 ：mv 文件 文件（不存在）；mv 文件夹 文件夹（不存在）
-删除：rm -rf 文件或文件夹（递归强制删除）
-显示当前路径：pwd
-管理员权限：命令加sudo
-进入root模式：sudo su
-安装.deb文件：sudo dpkg -i **.deb
-清理安装文件：sudo apt-get clean
-修复依赖文件：sudo ap......
+            chrome
+下载deb包双击安装即可
+为知笔记
+打开终端，通过官方PPA仓库安装
+123$ sudo add-apt-repository ppa:wiznote-team $ sudo apt-get update $ sudo apt-get install wiznote
+shadowsocks
+打开终端，通过官方PPA仓库安装
+123$ sudo add-apt-repositor......
         </div>
     </a>
     
         <p class="post-meta" style="margin: 10px 0;">
             Posted by Wang Fei on
-            2017-04-05
+            2017-04-08
         </p>
         <div class="tags">
             
@@ -418,6 +543,10 @@ windows系统中BIOS直接作为系统时间。
 
 <ul class="pager">
     
+    
+        <li class="next">
+            <a href="/archives/2/">Older Posts &rarr;</a>
+        </li>
     
 </ul>
 
@@ -448,7 +577,9 @@ windows系统中BIOS直接作为系统时间。
             
         
             
-            <a href="/tags/#Linux" title="Linux" rel="3">Linux</a>
+            <a href="/tags/#Linux" title="Linux" rel="7">Linux</a>
+            
+        
             
         
     </div>
@@ -459,7 +590,7 @@ windows系统中BIOS直接作为系统时间。
         
     <h5>ARCHIVES</h5>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">December 2019</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">December 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a><span class="archive-list-count">2</span></li></ul>
     </div>
 
         <hr>
