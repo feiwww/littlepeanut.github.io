@@ -69,7 +69,7 @@
 <style type="text/css">
     header.intro-header{
         
-            background-image: url('null')
+            background-image: url('Demo.png')
             /*post*/
         
     }
@@ -89,6 +89,8 @@
                 
                     <div class="post-heading">
                         <div class="tags">
+                            
+                              <a class="tag" href="/tags/#Linux" title="Linux">Linux</a>
                             
                         </div>
                         <h1>Ubuntu18.04安装搜狗输入法</h1>
@@ -212,7 +214,25 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                
+                <p>最近更新了Ubuntu18.04，一直在使用搜狗再安装搜狗输入法时遇到了一些问题，网上搜到的资料很多都需要重新打包，最新版的搜狗输入法已经不需要重新打包，直接安装即可，在此将成功安装的步骤分享。</p>
+<h1 id="安装中文语言">安装中文语言</h1>
+<p>由于安装了英文系统，因此首先需要安装中文语言，Setting-Region&amp;Language中点击“Manage Installed Languages”，在弹出的对话框中可以通过“Install/Remove Language”安装简体中文。</p>
+<h1 id="下载搜狗输入法">下载搜狗输入法</h1>
+<p>下载linux版本，官方地址https://pinyin.sogou.com/linux/</p>
+<h1 id="安装搜狗输入法">安装搜狗输入法</h1>
+<p>进入下载的deb包路径<br>
+sudo dpkg -i 你的deb包名称<br>
+此时有可能安装不成功，调用apt的自动修复,自动安装缺少的包<br>
+sudo apt-get install -f<br>
+此时已经安装了fcitx，重启。</p>
+<h1 id="配置输入法">配置输入法</h1>
+<ol>
+<li>重启后，在上述“Manage Installed Languages”（即Language Support设置窗口中），将“Keyboard input method system”设置为“fcitx”。</li>
+<li>在系统中搜索fcitx configuration，点击左下角添加输入法，在弹出的对话框中将Only Show Current Language取消，即可看到sogou Pinyin，选择添加即可。</li>
+</ol>
+<h1 id="重启完成">重启完成</h1>
+<p>到此为止搜狗输入法应该能够正常使用。</p>
+
                 
 
                 <hr>
@@ -257,7 +277,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-          <ol class="nav">none</ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#安装中文语言"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">安装中文语言</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#下载搜狗输入法"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">下载搜狗输入法</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#安装搜狗输入法"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">安装搜狗输入法</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#配置输入法"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">配置输入法</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#重启完成"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">重启完成</span></a></li></ol>
         
         </div>
       </aside>
@@ -277,6 +297,8 @@
                     <h5><a href="/tags/">FEATURED TAGS</a></h5>
                     <div class="tags">
                        
+                          <a class="tag" href="/tags/#Linux" title="Linux">Linux</a>
+                        
                     </div>
                 </section>
                 
