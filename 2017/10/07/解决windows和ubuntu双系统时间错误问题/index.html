@@ -14,11 +14,11 @@
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <title>
         
-          LittlePeanut
+          解决windows和ubuntu双系统时间错误问题 - LittlePeanut
         
     </title>
 
-    <link rel="canonical" href="http://yoursite-url/tags/Blog/">
+    <link rel="canonical" href="http://yoursite-url/2017/10/07/解决windows和ubuntu双系统时间错误问题/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -69,8 +69,8 @@
 <style type="text/css">
     header.intro-header{
         
-            background-image: url('/undefined')
-            /*page*/
+            background-image: url('Demo.png')
+            /*post*/
         
     }
     
@@ -87,10 +87,18 @@
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 
-                    <div class="site-heading">
-                        <h1>LittlePeanut</h1>
-                        <!--<hr class="small">-->
-                        <span class="subheading"></span>
+                    <div class="post-heading">
+                        <div class="tags">
+                            
+                              <a class="tag" href="/tags/#Linux" title="Linux">Linux</a>
+                            
+                        </div>
+                        <h1>解决windows和ubuntu双系统时间错误问题</h1>
+                        <h2 class="subheading"></h2>
+                        <span class="meta">
+                            Posted by Wang Fei on
+                            2017-10-07
+                        </span>
                     </div>
                 
 
@@ -193,255 +201,172 @@
 
 
     <!-- Main Content -->
-    <!-- Main Content -->
-<div class="container">
-    <div class="row">
-        
+    <!-- Modify by Yu-Hsuan Yen -->
 
-<!-- USE SIDEBAR -->
-    <!-- Post Container -->
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Post Container -->
             <div class="
-                col-lg-8 col-lg-offset-1
-                col-md-8 col-md-offset-1
-                col-sm-12
-                col-xs-12
-                post-container
-            ">
-            
-                
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            <!-- 归档列表 -->
-            
-            
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
 
-             <!-- 归档列表 -->
+                <h1 id="问题原因">问题原因</h1>
+<p>ubuntu和windows的系统时间都是参照BIOS时间来设定的，但是二者的设定规则有所不同，其中：</p>
+<ul>
+<li>ubuntu系统中将BIOS时间作为格林威治时间，然后加上时区，得到系统时间，使用UTC世界协调时间；</li>
+<li>windows系统中BIOS直接作为系统时间。</li>
+</ul>
+<h1 id="解决方法">解决方法</h1>
+<p>因此有两种方法可以解决双系统时间错误问题，可以根据自己情况使用两者之一解决该问题。</p>
+<h2 id="关闭ubuntu系统的utc">关闭ubuntu系统的UTC：</h2>
+<ol>
+<li>终端中输入sudo vim /etc/default/rcS；</li>
+<li>找到UTC=yes这一行，改成UTC=no；</li>
+<li>重启即可。</li>
+</ol>
+<h2 id="开启windows系统的utc">开启windows系统的UTC：</h2>
+<ol>
+<li>regedit启动注册表中打开路径HKEY_LOCAL_MACHINE/SYSTEM/CurrentControlSet/Control/TimeZoneInformation/；</li>
+<li>新建DWORD（32位值），并设置名称为RealTimeIsUniversal，值为1；</li>
+<li>重启。</li>
+</ol>
+<p>P.S. 对注册表进行修改前建议备份，以免误操作</p>
 
-            
-            <div class="one-tag-list">
-                <span class="fa fa-calendar-times-o listing-seperator" id="2019">
-                    <span class="tag-text">2019</span>
-                </span>
-                <ul>
                 
-                  <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-                 <li >
-                    12-10
-                    <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-                    <a href="/2019/12/10/Ubuntu18-04安装搜狗输入法/" style="color: #0085a1">
-                        <span>
-                            Ubuntu18.04安装搜狗输入法
-                        </span>
-                    </a>
-                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-                </li>
-                
-                  <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-                 <li >
-                    12-09
-                    <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-                    <a href="/2019/12/09/Hexo-beantech主题博客常用功能配置/" style="color: #0085a1">
-                        <span>
-                            Hexo-beantech主题博客常用功能配置
-                        </span>
-                    </a>
-                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-                </li>
-                
-                  <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-                 <li >
-                    12-09
-                    <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-                    <a href="/2019/12/09/Hexo-beantech主题博客常见bug修复/" style="color: #0085a1">
-                        <span>
-                            Hexo-beantech主题博客常见bug修复
-                        </span>
-                    </a>
-                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-                </li>
-                
-                  <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-                 <li >
-                    12-09
-                    <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-                    <a href="/2019/12/09/基于Hexo-Github-page从零开始搭建个人博客/" style="color: #0085a1">
-                        <span>
-                            基于Hexo+Github page从零开始搭建个人博客
-                        </span>
-                    </a>
-                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-                </li>
-                
+
+                <hr>
+                <!-- Pager -->
+                <ul class="pager">
+                    
+                        <li class="previous">
+                            <a href="/2019/12/09/基于Hexo-Github-page从零开始搭建个人博客/" data-toggle="tooltip" data-placement="top" title="基于Hexo+Github page从零开始搭建个人博客">&larr; Previous Post</a>
+                        </li>
+                    
+                    
+                        <li class="next">
+                            <a href="/2017/04/05/Ubuntu常用命令/" data-toggle="tooltip" data-placement="top" title="Ubuntu常用命令">Next Post &rarr;</a>
+                        </li>
+                    
                 </ul>
+                
+                <!--畅言云评论PC版-->
+                <div id="SOHUCS" ></div>
+                <script charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/changyan.js" ></script>
+                <script type="text/javascript">
+                    window.changyan.api.config({
+                        appid: 'cyuzPPYBx',
+                        conf: 'prod_5e1680173ac2f298aa36381ba9396f32'
+                    });
+                </script>
+
+                <!-- duoshuo Share start -->
+                
+                <!-- 多说 Share end-->
+
+                <!-- 多说评论框 start -->
+                
+                <!-- 多说评论框 end -->
+
+                <!-- disqus comment start -->
+                
+                <!-- disqus comment end -->
             </div>
             
-            <div class="one-tag-list">
-                <span class="fa fa-calendar-times-o listing-seperator" id="2017">
-                    <span class="tag-text">2017</span>
-                </span>
-                <ul>
+            <!-- Tabe of Content -->
+            <!-- Table of Contents -->
+
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#问题原因"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">问题原因</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#解决方法"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">解决方法</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#关闭ubuntu系统的utc"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">关闭ubuntu系统的UTC：</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#开启windows系统的utc"><span class="toc-nav-number">2.2.</span> <span class="toc-nav-text">开启windows系统的UTC：</span></a></li></ol></li></ol>
+        
+        </div>
+      </aside>
+    
+
                 
-                  <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-                 <li >
-                    10-07
-                    <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-                    <a href="/2017/10/07/解决windows和ubuntu双系统时间错误问题/" style="color: #0085a1">
-                        <span>
-                            解决windows和ubuntu双系统时间错误问题
-                        </span>
-                    </a>
-                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-                </li>
+            <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
                 
-                  <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-                 <li >
-                    04-05
-                    <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-                    <a href="/2017/04/05/Ubuntu常用命令/" style="color: #0085a1">
-                        <span>
-                            Ubuntu常用命令
-                        </span>
-                    </a>
-                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-                </li>
+                <section>
+                    <!-- no hr -->
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                       
+                          <a class="tag" href="/tags/#Linux" title="Linux">Linux</a>
+                        
+                    </div>
+                </section>
                 
+
+                <!-- Friends Blog -->
+                
+                <hr>
+                <h5>FRIENDS</h5>
+                <ul class="list-inline">
+
+                    
+                        <li><a href="https://rse.buaa.edu.cn/" target="_blank">RSE, BUAA</a></li>
+                    
                 </ul>
+                
             </div>
-            
-
-
         </div>
     </div>
-</div>
+</article>
 
-                <!-- 如果开启评论功能 -->
-                
-            </div>
 
-          <!-- Sidebar Container -->
-<div class="
-    col-lg-3 col-lg-offset-0
-    col-md-3 col-md-offset-0
-    col-sm-12
-    col-xs-12
-    sidebar-container
-">
-    
-        <!-- Featured Tags -->
 
-<section>
-    <!-- no hr -->
-    <h5><a href="/tags/">FEATURED TAGS</a></h5>
-    <div class="tags">
-        
-            
-            <a href="/tags/#Blog" title="Blog" rel="3">Blog</a>
-            
-        
-            
-            <a href="/tags/#Linux" title="Linux" rel="2">Linux</a>
-            
-        
-    </div>
-</section>
 
-        <hr>
-    
-        
-    <h5>ARCHIVES</h5>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">December 2019</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a><span class="archive-list-count">1</span></li></ul>
-    </div>
 
-        <hr>
-    
-        <!-- Short About -->
-<section class="visible-md visible-lg">
-    <h5><a href="/about/">ABOUT ME</a></h5>
-    <div class="short-about">
 
-        
-            <img id = "avatar_pic" src="/img/peanut.png" />
-        
 
-        
-            <p>Hi, i&#39;m Wang Fei</p>
-        
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'hover',
+          placement: 'left',
+          icon: 'ℬ'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
 
-        <!-- SNS Link -->
-        <ul class="list-inline">
-            
-            
-            
-
-            
-
-            
-                <li>
-                    <a target="_blank" href="https://www.facebook.com/100011122936352">
-                        <span class="fa-stack fa-lg">
-                            <i class="fa fa-circle fa-stack-2x"></i>
-                            <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-                        </span>
-                    </a>
-                </li>
-            
-
-            
-                <li>
-                    <a target="_blank"  href="https://github.com/feiwww">
-                        <span class="fa-stack fa-lg">
-                            <i class="fa fa-circle fa-stack-2x"></i>
-                            <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                        </span>
-                    </a>
-                </li>
-            
-            
-            
-            
-        </ul>
-    </div>
-</section>
-        <hr>
-    
-        <!-- Friends Blog -->
-
-<h5>FRIENDS</h5>
-<ul class="list-inline">
-
-    
-        <li><a href="https://rse.buaa.edu.cn/" target="_blank">RSE, BUAA</a></li>
-    
-</ul>
-
-        <hr>
-    
-</div>
-
-        
-    </div>
-</div>
+<script type="text/javascript" src="node_modules/zooming/build/zooming.min.js"></script>
 
 
     <!-- Footer -->
