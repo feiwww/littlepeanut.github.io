@@ -144,14 +144,14 @@
 
                         
                         <li>
-                            <a href="/about/">About</a>
+                            <a href="/archive/">Archives</a>
                         </li>
                         
                     
 
                         
                         <li>
-                            <a href="/archive/">Archives</a>
+                            <a href="/about/">About</a>
                         </li>
                         
                     
@@ -215,8 +215,9 @@
                 post-container">
 
                 <p>本文介绍一种基于Hexo框架和Github Page服务搭建博客的方法，其中还将原始的Github page指向了自有域名。</p>
-<h1 id="github配置">github配置</h1>
-<hr>
+<h1 id="page服务配置">Page服务配置</h1>
+<p>将静态网页同时部署到Github和国内coding</p>
+<h2 id="github">Github</h2>
 <p>安装git,ssh</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get install git</span><br><span class="line">$ sudo apt-get install ssh</span><br></pre></td></tr></table></figure>
 <p>配置git用户名和邮箱</p>
@@ -229,8 +230,19 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh -T git@github.com</span><br></pre></td></tr></table></figure>
 <p>more Info <a href="https://help.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh" target="_blank" rel="noopener">Github SSH文档</a>.</p>
 <p>配置完Github后，<a href="http://xn--Githubxxx-4s4oo11ie9a.github.io" target="_blank" rel="noopener">创建Github库xxx.github.io</a>，其中Github <a href="http://xn--Pagexx-zy7ir11bz6wqxcb44gnuii73h.github.io" target="_blank" rel="noopener">Page库的名称必须为xx.github.io</a></p>
+<h2 id="coding">Coding</h2>
+<p>Coding是国内的代码托管网站，部署到coding可以避免博客访问速度不稳定等问题，注册登录Coding，为了方便，建立github中的同名项目，在项目-构建与部署-静态网站中开启服务，并绑定到自有域名。同时在自有域名解析中添加一条新的CNAME，指向coding page生成的网址。<br>
+在博客_config.yml配置文件中同时配置github和coding部署，如：</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">deploy</span>:</span><br><span class="line">- <span class="attribute">type</span>: git</span><br><span class="line">  <span class="attribute">repo</span>: git<span class="variable">@github</span>.<span class="attribute">com</span>:feiwww/littlepeanut.github.io.git</span><br><span class="line">  <span class="attribute">branch</span>: master</span><br><span class="line">- <span class="attribute">type</span>: git</span><br><span class="line">  <span class="attribute">repository</span>: git<span class="variable">@e</span>.coding.<span class="attribute">net</span>:wangfeiabn/wangfeiabn.git</span><br><span class="line">  <span class="attribute">branch</span>: master</span><br></pre></td></tr></table></figure>
+<h2 id="同时配置ssh">同时配置SSH</h2>
+<p>使用ssh地址+配置SSH公钥可以实现部署时不需要输入密码<br>
+生成SSH公钥：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C <span class="string">"your email"</span></span><br></pre></td></tr></table></figure>
+<p>在生成SSH时会提示选择保存路径可以量Github和coding的公钥都保存在~/.ssh目录下，并重命名coding公钥为“my-coding”，并在.ssh/下新建配置文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">touch ~/.ssh/config</span><br></pre></td></tr></table></figure>
+<p>配置文件具体内容如下：</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># github</span></span><br><span class="line">Host github</span><br><span class="line">HostName github.com</span><br><span class="line">PreferredAuthentications publickey</span><br><span class="line">IdentityFile ~/.ssh/id_rsa</span><br><span class="line">User feiwww</span><br><span class="line"><span class="comment"># coding</span></span><br><span class="line">Host coding</span><br><span class="line">HostName git.coding.net</span><br><span class="line">PreferredAuthentications publickey</span><br><span class="line">IdentityFile ~/.ssh/my-coding</span><br><span class="line">User wangfeiabn</span><br></pre></td></tr></table></figure>
 <h1 id="使用自有域名">使用自有域名</h1>
-<hr>
 <ol>
 <li>万网或godaddy购买域名，由于国内备案麻烦谨慎购买.cn域名，<a href="http://xn--ml5a.xn--com-t33er8otolqqp0g3aog0b.cc" target="_blank" rel="noopener">除.com常见的域名有.cc</a>，.me，.top，.club等。</li>
 <li>万网域名自动使用hichina云解析(若使用godaddy，为了加快解析速度，防止被墙，可将 DNS 服务器可设置为为DNSPod)</li>
@@ -241,7 +253,6 @@
 <li>若在Github Page中使用自有域名，一般在一天后才能在库的Setting中开启HTTPS</li>
 </ol>
 <h1 id="hexo使用">Hexo使用</h1>
-<hr>
 <p>Hexo是一个常见的静态博客框架.<br>
 首先参考 <a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">Hexo中文文档</a>安装Hexo，注意文档中提到在安装时尽量不要使用sudo<br>
 安装npm和Node.js，验证</p>
@@ -331,7 +342,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#github配置"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">github配置</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#使用自有域名"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">使用自有域名</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#hexo使用"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">Hexo使用</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#备份博客源代码"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">备份博客源代码</span></a></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#page服务配置"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">Page服务配置</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#github"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">Github</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#coding"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">Coding</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#同时配置ssh"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">同时配置SSH</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#使用自有域名"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">使用自有域名</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#hexo使用"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">Hexo使用</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#备份博客源代码"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">备份博客源代码</span></a></li></ol>
         
         </div>
       </aside>
