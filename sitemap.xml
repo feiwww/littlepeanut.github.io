@@ -3,17 +3,17 @@
 
 
     <sitemap>
-        <loc>http://yoursite-url/post-sitemap.xml</loc>
+        <loc>littlepeanut.top/post-sitemap.xml</loc>
         <lastmod>2019-12-10T11:15:18.402Z</lastmod>
     </sitemap>
 
     <sitemap>
-        <loc>http://yoursite-url/page-sitemap.xml</loc>
+        <loc>littlepeanut.top/page-sitemap.xml</loc>
         <lastmod>2019-12-10T11:05:57.007Z</lastmod>
     </sitemap>
 
     <sitemap>
-        <loc>http://yoursite-url/tag-sitemap.xml</loc>
+        <loc>littlepeanut.top/tag-sitemap.xml</loc>
         <lastmod>2019-12-10T11:15:18.402Z</lastmod>
     </sitemap>
 
