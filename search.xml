@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>Hexo-beantech主题博客常用功能配置</title>
+    <url>/2019/12/09/Hexo-beantech%E4%B8%BB%E9%A2%98%E5%8D%9A%E5%AE%A2%E5%B8%B8%E7%94%A8%E5%8A%9F%E8%83%BD%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[<h1 id="添加畅言云评论">添加畅言云评论</h1>
+<p>通过畅言云评论可以实现评论等功能，首先须在<a href="http://changyan.kuaizhan.com/" target="_blank" rel="noopener">畅言官网</a>进行注册，进入云评论-安装云评论-通用代码安装中将配置代码复制添加到\themes\beantech\layout\post.ej中，具体位置如下图所示。<br>
+<img src="changyan.png" data-action="zoom"></p>
+<h1 id="添加访问统计">添加访问统计</h1>
+<p>利用不蒜子的pv模式获取网站总访问量，利用uv模式获取访客人数，修改\themes\beantech\layout_partial\footer.ejs文件，首先在最后添加script如下：</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">async</span> <span class="attr">src</span>=<span class="string">"//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>然后在html中添加代码：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&lt;p <span class="class"><span class="keyword">class</span></span>=<span class="string">"copyright text-muted"</span>&gt;</span><br><span class="line">    &lt;a&gt;</span><br><span class="line">        &lt;span id=<span class="string">"busuanzi_container_site_pv"</span>&gt;本站总访问量&lt;span id=<span class="string">"busuanzi_value_site_pv"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span>次&lt;<span class="regexp">/span&gt;</span></span><br><span class="line"><span class="regexp">        &lt;span class="post-meta-divider"&gt;|&lt;/</span>span&gt;</span><br><span class="line">        &lt;span id=<span class="string">"busuanzi_container_site_uv"</span>&gt;本站访客数&lt;span id=<span class="string">"busuanzi_value_site_uv"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span>人&lt;<span class="regexp">/span&gt;</span></span><br><span class="line"><span class="regexp">    &lt;/</span>a&gt;</span><br><span class="line">&lt;<span class="regexp">/p&gt;</span></span><br></pre></td></tr></table></figure>
+<p>添加位置如图所示：<br>
+<img src="count.png" data-action="zoom"></p>
+<h1 id="添加留言板">添加留言板</h1>
+<p>将云评论独立，设置为留言板功能。<br>
+首先在主题下添加一个留言板BBS界面，在/themes/beantech/layout中新建bbs.ejs,文件内容如下：</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">layout: page</span><br><span class="line">---</span><br><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">header</span><span class="selector-class">.intro-header</span> &#123;</span></span><br><span class="line">        background-position: right;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- Chinese Version --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"zh post-container"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">%-</span> <span class="attr">page.content</span> %&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--这里添加畅言云评论代码--&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>然后在根目录的/source中新建/bbs文件夹，新建index.md文件，类似于about页面，使用markdown设置页面内容，index.md内容如下所示：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">layout:</span> <span class="string">"bbs"</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">"BBS"</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2019</span><span class="number">-12</span><span class="number">-10</span> <span class="number">19</span><span class="string">:11:35</span></span><br><span class="line"><span class="attr">description:</span> <span class="string">"free talk to me"</span></span><br><span class="line"><span class="attr">header-img:</span> <span class="string">"img/header_img/home-bg-2-dark.png"</span></span><br><span class="line"><span class="attr">comments:</span> <span class="literal">true</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure>
+<h1 id="百度链接提交">百度链接提交</h1>
+<p><a href="https://ziyuan.baidu.com/site/index" target="_blank" rel="noopener">链接提交工具</a>是网站主动向百度搜索推送数据的工具，本工具可缩短爬虫发现网站链接时间，网站时效性内容建议使用链接提交工具，实时向搜索推送数据。<br>
+安装插件</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm install hexo-baidu-url-submit --save</span><br></pre></td></tr></table></figure>
+<p>确保配置文件_config.yml中url与百度站点管理注册域名相同，并添加：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">baidu_url_submit:</span></span><br><span class="line">  <span class="attr">count:</span> <span class="number">1</span></span><br><span class="line">  <span class="attr">host:</span> <span class="string">littlepeanut.top</span></span><br><span class="line">  <span class="attr">token:</span> <span class="string">your_token</span> <span class="comment">## 密钥</span></span><br><span class="line">  <span class="attr">path:</span> <span class="string">baidu_urls.txt</span></span><br></pre></td></tr></table></figure>
+<p>同时在配置文件中的deployer中添加百度提交：</p>
+<figure class="highlight less"><table><tr><td class="code"><pre><span class="line"><span class="attribute">deploy</span>:</span><br><span class="line">- <span class="attribute">type</span>: git</span><br><span class="line">  <span class="attribute">repo</span>: git<span class="variable">@github</span>.<span class="attribute">com</span>:feiwww/littlepeanut.github.io.git</span><br><span class="line">  <span class="attribute">branch</span>: master</span><br><span class="line">- <span class="attribute">type</span>: git</span><br><span class="line">  <span class="attribute">repository</span>: git<span class="variable">@e</span>.coding.<span class="attribute">net</span>:wangfeiabn/wangfeiabn.git</span><br><span class="line">  <span class="attribute">branch</span>: master</span><br><span class="line">- <span class="attribute">type</span>: baidu_url_submitter # 添加该行</span><br></pre></td></tr></table></figure>
+<p>如上配置了github、coding和百度链接提交三种部署方式，使用hexo d部署时在github、coding上传代码的同时，会将链接主动提交到百度。</p>
+<h1 id="使用google-analytics">使用Google Analytics</h1>
+<ol>
+<li>登录注册<a href="https://analytics.google.com/analytics" target="_blank" rel="noopener">Google Analytics</a>,填写域名生成跟踪ID</li>
+<li>由于beantech主题已经实现了该功能，直接将跟踪ID填写在站点配置文件中_config.yml即可。</li>
+</ol>
+<hr>
+<p>Ref. <a href="https://godweiyang.com/2018/04/13/hexo-blog/" target="_blank" rel="noopener">韦阳的博客</a><br>
+<a href="https://www.simon96.online/2018/10/12/hexo-tutorial/" target="_blank" rel="noopener">遇见西门</a></p>
+]]></content>
+      <tags>
+        <tag>Blog</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo-beantech主题博客常见bug修复</title>
+    <url>/2019/12/09/Hexo-beantech%E4%B8%BB%E9%A2%98%E5%8D%9A%E5%AE%A2%E5%B8%B8%E8%A7%81bug%E4%BF%AE%E5%A4%8D/</url>
+    <content><![CDATA[<h1 id="contents无法跳转">contents无法跳转</h1>
+<p>Markdown解析过程中TOC锚电解析问题导致了在博文右侧的contents无法跳转，再点击后，网页在后面多了/#null。修复方法为：<br>
+修改博客根目录的node_modules\hexo-toc\lib\filter.js，将28-31行修改为：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="variable">$title</span>.attr(<span class="string">'id'</span>, id);</span><br><span class="line">// <span class="variable">$title</span>.children(<span class="string">'a'</span>).remove();</span><br><span class="line">// <span class="variable">$title</span>.html( <span class="string">'&lt;span id="'</span> + id + <span class="string">'"&gt;'</span> + <span class="variable">$title</span>.html() + <span class="string">'&lt;/span&gt;'</span> );</span><br><span class="line">// <span class="variable">$title</span>.removeAttr(<span class="string">'id'</span>);</span><br></pre></td></tr></table></figure>
+<p>具体说明见<a href="https://convivae.top/2019/03/29/Hexo%20%E5%8D%9A%E5%AE%A2%E8%B8%A9%E5%9D%91/#toc-%E9%94%9A%E7%82%B9-undefined" target="_blank" rel="noopener">Convivae’s blog</a></p>
+]]></content>
+      <tags>
+        <tag>Blog</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>基于Hexo+Github page从零开始搭建个人博客</title>
+    <url>/2019/12/09/%E5%9F%BA%E4%BA%8EHexo-Github-page%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</url>
+    <content><![CDATA[<p>本文介绍一种基于Hexo框架和Github Page服务搭建博客的方法，其中还将原始的Github page指向了自有域名。</p>
+<h1 id="page服务配置">Page服务配置</h1>
+<p>将静态网页同时部署到Github和国内coding</p>
+<h2 id="github">Github</h2>
+<p>安装git,ssh</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get install git</span><br><span class="line">$ sudo apt-get install ssh</span><br></pre></td></tr></table></figure>
+<p>配置git用户名和邮箱</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git config --global user.name <span class="string">"your name"</span></span><br><span class="line">$ git config--global user.email <span class="string">"your email"</span></span><br></pre></td></tr></table></figure>
+<p>配置SSH，参考 ，如下：<br>
+创建SSH key</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -b 4096 -C <span class="string">"your email"</span></span><br></pre></td></tr></table></figure>
+<p>将~/.ssh/id_rsa.pub内容添加到Github-Setting-SSH keys<br>
+验证github SSH连接</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+<p>more Info <a href="https://help.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh" target="_blank" rel="noopener">Github SSH文档</a>.</p>
+<p>配置完Github后，<a href="http://xn--Githubxxx-4s4oo11ie9a.github.io" target="_blank" rel="noopener">创建Github库xxx.github.io</a>，其中Github <a href="http://xn--Pagexx-zy7ir11bz6wqxcb44gnuii73h.github.io" target="_blank" rel="noopener">Page库的名称必须为xx.github.io</a></p>
+<h2 id="coding">Coding</h2>
+<p>Coding是国内的代码托管网站，部署到coding可以避免博客访问速度不稳定等问题，注册登录Coding，为了方便，建立github中的同名项目，在项目-构建与部署-静态网站中开启服务，并绑定到自有域名。同时在自有域名解析中添加一条新的CNAME，指向coding page生成的网址。<br>
+在博客_config.yml配置文件中同时配置github和coding部署，如：</p>
+<figure class="highlight less"><table><tr><td class="code"><pre><span class="line"><span class="attribute">deploy</span>:</span><br><span class="line">- <span class="attribute">type</span>: git</span><br><span class="line">  <span class="attribute">repo</span>: git<span class="variable">@github</span>.<span class="attribute">com</span>:feiwww/littlepeanut.github.io.git</span><br><span class="line">  <span class="attribute">branch</span>: master</span><br><span class="line">- <span class="attribute">type</span>: git</span><br><span class="line">  <span class="attribute">repository</span>: git<span class="variable">@e</span>.coding.<span class="attribute">net</span>:wangfeiabn/wangfeiabn.git</span><br><span class="line">  <span class="attribute">branch</span>: master</span><br></pre></td></tr></table></figure>
+<h2 id="同时配置ssh">同时配置SSH</h2>
+<p>使用ssh地址+配置SSH公钥可以实现部署时不需要输入密码<br>
+生成SSH公钥：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C <span class="string">"your email"</span></span><br></pre></td></tr></table></figure>
+<p>在生成SSH时会提示选择保存路径可以量Github和coding的公钥都保存在~/.ssh目录下，并重命名coding公钥为“my-coding”，并在.ssh/下新建配置文件</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">touch ~/.ssh/config</span><br></pre></td></tr></table></figure>
+<p>配置文件具体内容如下：</p>
+<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line"><span class="comment"># github</span></span><br><span class="line">Host github</span><br><span class="line">HostName github.com</span><br><span class="line">PreferredAuthentications publickey</span><br><span class="line">IdentityFile ~/.ssh/id_rsa</span><br><span class="line">User feiwww</span><br><span class="line"><span class="comment"># coding</span></span><br><span class="line">Host coding</span><br><span class="line">HostName git.coding.net</span><br><span class="line">PreferredAuthentications publickey</span><br><span class="line">IdentityFile ~/.ssh/my-coding</span><br><span class="line">User wangfeiabn</span><br></pre></td></tr></table></figure>
+<h1 id="使用自有域名">使用自有域名</h1>
+<ol>
+<li>万网或godaddy购买域名，由于国内备案麻烦谨慎购买.cn域名，<a href="http://xn--ml5a.xn--com-t33er8otolqqp0g3aog0b.cc" target="_blank" rel="noopener">除.com常见的域名有.cc</a>，.me，.top，.club等。</li>
+<li>万网域名自动使用hichina云解析(若使用godaddy，为了加快解析速度，防止被墙，可将 DNS 服务器可设置为为DNSPod)</li>
+<li>添加两条解析，使得访问“<a href="http://xxx.com" target="_blank" rel="noopener">xxx.com</a>”和“<a href="http://www.xxx.com" target="_blank" rel="noopener">www.xxx.com</a>”时均能够解析域名<br>
+主机记录@，记录类型CNAME，解析线路默认，<a href="http://xn--littlepeanut-vv0t340oob9i.github.io" target="_blank" rel="noopener">记录值littlepeanut.github.io</a>.，TTL1小时；主机记录www，记录类型A，解析线路默认，记录值185.199.109.153，TTL1小时(主机IP可直接ping域名得到)</li>
+<li>今后可根据需要添加二级域名</li>
+<li>在博客中source和public中添加CNAME，记录域名littlepeanut.top，将本地和Github Page上的Hexo绑定到自有域名</li>
+<li>若在Github Page中使用自有域名，一般在一天后才能在库的Setting中开启HTTPS</li>
+</ol>
+<h1 id="hexo使用">Hexo使用</h1>
+<p>Hexo是一个常见的静态博客框架.<br>
+首先参考 <a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">Hexo中文文档</a>安装Hexo，注意文档中提到在安装时尽量不要使用sudo<br>
+安装npm和Node.js，验证</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ node -v </span><br><span class="line">$ npm -v</span><br><span class="line">$ npx -v</span><br></pre></td></tr></table></figure>
+<p>下面初始化博客</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo init myblog</span><br></pre></td></tr></table></figure>
+<p>安装git管理扩展</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm i hexo-deployer-git</span><br></pre></td></tr></table></figure>
+<p>新建文章，存放在~/source/_posts</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo n <span class="string">"article title"</span> == hexo new <span class="string">"article title"</span></span><br></pre></td></tr></table></figure>
+<p>生成静态网页</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo g</span><br></pre></td></tr></table></figure>
+<p>启动服务，可本地预览</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo s</span><br></pre></td></tr></table></figure>
+<p>部署</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+<p>修改配置文件_config.yml，首先更改url和root，若不修改，即使在本地服务网页能够正常显示，部署后仍无法识别css等文件，具体修改规则如下：<br>
+如果域名是https://xxx.com：</p>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line"><span class="string">url:</span> <span class="string">https:</span><span class="comment">//xxx.com/</span></span><br><span class="line"><span class="string">root:</span> /</span><br></pre></td></tr></table></figure>
+<p>如果域名是https://xxx.com/blog：</p>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line"><span class="string">url:</span> <span class="string">https:</span><span class="comment">//xxx.com/blog</span></span><br><span class="line"><span class="string">root:</span> /blog</span><br></pre></td></tr></table></figure>
+<p>如果域名是https://yourID.github.io/blog：</p>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line"><span class="string">url:</span> <span class="string">https:</span><span class="comment">//yourID.github.io/blog</span></span><br><span class="line"><span class="string">root:</span> /blog</span><br></pre></td></tr></table></figure>
+<p>如果域名是https://yourID.github.io：</p>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line"><span class="string">url:</span> <span class="string">https:</span><span class="comment">//yourID.github.io/blog</span></span><br><span class="line"><span class="string">root:</span> <span class="regexp">/yourID.github.io/</span></span><br></pre></td></tr></table></figure>
+<p>同样还须在_config.yml中设置部署的git库地址</p>
+<figure class="highlight less"><table><tr><td class="code"><pre><span class="line"><span class="attribute">deploy</span>:</span><br><span class="line">  <span class="attribute">type</span>: git</span><br><span class="line">  <span class="attribute">repo</span>: <span class="attribute">https</span>:<span class="comment">//github.com/feiwww/littlepeanut.github.io.git</span></span><br><span class="line">  <span class="attribute">branch</span>: master</span><br></pre></td></tr></table></figure>
+<p>其他常用Hexo命令</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm update hexo -g <span class="comment">#升级 </span></span><br><span class="line">$ hexo server <span class="comment">#Hexo会监视文件变动并自动更新，无须重启服务器</span></span><br><span class="line">$ hexo server -s <span class="comment">#静态模式</span></span><br><span class="line">$ hexo server -p 5000 <span class="comment">#更改端口</span></span><br><span class="line">$ hexo server -i 192.168.1.1 <span class="comment">#自定义 IP</span></span><br><span class="line">$ hexo clean <span class="comment">#清除缓存，若是网页正常情况下可以忽略这条命令</span></span><br></pre></td></tr></table></figure>
+<p>在一般情况下更新博客时，重新生成下静态博客并部署到Github上即可，使用的操作如下：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo clean</span><br><span class="line">$ hexo g</span><br><span class="line">$ hexo d</span><br></pre></td></tr></table></figure>
+<p>使用Bentech主题效果如下所示。<br>
+<img src="beantech.png" data-action="zoom" data-original="beantech.png"></p>
+<h1 id="备份博客源代码">备份博客源代码</h1>
+<p>使用hexo d将hexo部署到Github Page中后，只是将静态博客上传，并没有保存博客的源代码，为了方便在不同终端电脑上对博客格式和内容进行修改，这里将博客所有源代码同时保存到Github中，具体是将源代码保存到我们GIthub Page项目的分支中。</p>
+<ol>
+<li>在网页端添加hexo分支，并将其设置为主分支，在切换到hexo分支后</li>
+<li>将项目clone到本地，取出clone的项目的.git文件夹放到博客的根目录下</li>
+<li>将代码上传到hexo分支中</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git checkout hexo</span><br><span class="line">$ git add .</span><br><span class="line">$ git commit -m <span class="string">"update my blog source code"</span></span><br><span class="line">$ git push origin hexo</span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>Blog</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>scipy稀疏矩阵的存储格式</title>
+    <url>/2019/03/13/scipy%E7%A8%80%E7%96%8F%E7%9F%A9%E9%98%B5%E7%9A%84%E5%AD%98%E5%82%A8%E6%A0%BC%E5%BC%8F/</url>
+    <content><![CDATA[<p>scipy支持目前主流的稀疏矩阵储存格式，包括bsr_matrix，coo_matrix，csc_matrix，csr_matrix，dia_matrix，dok_matrixlil_matrix，具体参见文档：<a href="https://docs.scipy.org/doc/scipy/reference/sparse.html" target="_blank" rel="noopener">https://docs.scipy.org/doc/scipy/reference/sparse.html</a></p>
+<h1 id="coordinate-format">COOrdinate format</h1>
+<p>仅存储非零元素以及每个非零元素的坐标。使用3个数组进行存储：values, row, column</p>
+<ul>
+<li>values: 数据，包括矩阵中的非零元素， 顺序任意。</li>
+<li>rows: 对应数据所处的行。</li>
+<li>columns: 对应数据所处的列。</li>
+</ul>
+<p>示例：</p>
+<figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line"># Constructing a matrix using ijv format</span><br><span class="line">&gt;&gt;&gt; row  = np.<span class="built_in">array</span>([<span class="number">0</span>, <span class="number">3</span>, <span class="number">1</span>, <span class="number">0</span>])</span><br><span class="line">&gt;&gt;&gt; col  = np.<span class="built_in">array</span>([<span class="number">0</span>, <span class="number">3</span>, <span class="number">1</span>, <span class="number">2</span>])</span><br><span class="line">&gt;&gt;&gt; data = np.<span class="built_in">array</span>([<span class="number">4</span>, <span class="number">5</span>, <span class="number">7</span>, <span class="number">9</span>])</span><br><span class="line">&gt;&gt;&gt; coo_matrix((data, (row, col)), shape=(<span class="number">4</span>, <span class="number">4</span>)).toarray()</span><br><span class="line"><span class="built_in">array</span>([[<span class="number">4</span>, <span class="number">0</span>, <span class="number">9</span>, <span class="number">0</span>],</span><br><span class="line">       [<span class="number">0</span>, <span class="number">7</span>, <span class="number">0</span>, <span class="number">0</span>],</span><br><span class="line">       [<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>],</span><br><span class="line">       [<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">5</span>]])</span><br></pre></td></tr></table></figure>
+<p>COO储存优点：简单、容易理解。</p>
+<hr>
+<p>Ref. <a href="https://blog.csdn.net/anshan1984/article/details/8580952" target="_blank" rel="noopener">https://blog.csdn.net/anshan1984/article/details/8580952</a></p>
+<p>P.S. 持续更新</p>
+]]></content>
+      <tags>
+        <tag>数据结构</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>修复sudo命令响应很慢问题</title>
+    <url>/2019/01/25/%E4%BF%AE%E5%A4%8Dsudo%E5%91%BD%E4%BB%A4%E5%93%8D%E5%BA%94%E5%BE%88%E6%85%A2%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<h1 id="背景">背景</h1>
+<p>重装系统时不小心将用户名写错，再修改用户名后出现了sudo命令相应很慢的情况，经过了解认定为主机名查询表问题。</p>
+<h1 id="问题原因">问题原因</h1>
+<p>在系统第一次安装时，系统已经自动将127.0.0.1指向了本机名，写入了/etc/hosts文件。hosts文件是Linux系统中一个负责IP地址与域名快速解析的文件，可以定义IP地址和主机名之间的映射，对于服务器类型的linux系统其作用还是不可忽略的。</p>
+<h1 id="解决方法">解决方法</h1>
+<ol>
+<li>$ hostname查看本机的hostname</li>
+<li>修改主机名表sudo vim /etc/hosts</li>
+<li>在文件中添加一行，127.0.0.1 hostname（1中查询到的本机名）</li>
+</ol>
+]]></content>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>NTFS分区不能读写修复方法</title>
+    <url>/2019/01/07/NTFS%E5%88%86%E5%8C%BA%E4%B8%8D%E8%83%BD%E8%AF%BB%E5%86%99%E4%BF%AE%E5%A4%8D%E6%96%B9%E6%B3%95/</url>
+    <content><![CDATA[<p>前段时间Ubuntu系统NTFS分区经常出现不可读写的问题，包括/etc/fstab中自动挂载的分区和未挂载的若干分区。通常情况下，重启电脑进入Windows系统在回到Ubuntu即可解决。</p>
+<p>使用sudo mount -o remount rw *(自动挂载的分区名称)进行可读写的重新挂载，图标上的小锁是去掉了，但还是存在不可读写问题。</p>
+<p>使用ntfsfix修复可解决此问题，具体方法如下：</p>
+<ol>
+<li>卸载挂载分区，可直接点击系统中的unount图标，也可以使用sudo umount /dev/*(硬盘序列号可使用fdisk -lu查看)</li>
+<li>分区修复sudo ntfsfix /dev/*</li>
+</ol>
+]]></content>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Ubuntu18.04配置深度学习环境Pytorch1.0+CUDA10+NVIDA驱动</title>
+    <url>/2018/12/04/Ubuntu18-04%E9%85%8D%E7%BD%AE%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%8E%AF%E5%A2%83Pytorch1-0-CUDA10-NVIDA%E9%A9%B1%E5%8A%A8/</url>
+    <content><![CDATA[<p>如果想要使用GPU版本的Pytorch，需要先确保安装NVIDIA驱动、CUDA和cuDNN</p>
+<h1 id="安装nvida-gpu显卡驱动">安装NVIDA GPU显卡驱动</h1>
+<ol>
+<li>查询显卡型号</li>
+<li>官网下载适合自己显卡的驱动.run文件</li>
+<li>卸载原有的NVIDIA驱动，sudo apt-get remove --purge nvidia*    sudo apt-get autoremove；如果是使用官网下载的.run驱动，找到安装文件sudo ./*.run --uninstall</li>
+<li>禁用nouveau驱动sudo gedit /etc/modprobe.d/blacklist.conf，在末尾添加:blacklist nouveau，然后执行：sudo update-initramfs -u，重启进入命令行界面后执行：lsmod | grep nouveau。如果没有屏幕输出，说明禁用nouveau成功。</li>
+<li>进入Ctrl+Alt+F3进入命令行模式，关闭gdm服务sudo /etc/init.d/gdm3 stop</li>
+<li>找到下载的驱动安装，sudo ./*****.sh -no-opengl-files(务必加上此参数)</li>
+<li>重启sudo reboot</li>
+</ol>
+<h1 id="安装cuda101">安装CUDA10.1</h1>
+<ol>
+<li><a href="https://developer.nvidia.com/cuda-downloads" target="_blank" rel="noopener">官网</a>下载linux, x86_64, Ubuntu, 18.04(或17.04)的runfile</li>
+<li>安装</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo sh cuda_10.0.130_410.48_linux.run</span><br></pre></td></tr></table></figure>
+<p>按空格读完声明，在安装过程中会询问是否安装显卡驱动，我们已经安装所以将驱动项去掉即可。安装完成后可能会有警告，提示samplees缺少一些包，暂时忽略，没有影响。</p>
+<ol start="3">
+<li>配置环境变量</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo gedit ~/.bashrc</span><br></pre></td></tr></table></figure>
+<p>在.bashrc中添加下面Path</p>
+<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line"><span class="comment"># add cuda</span></span><br><span class="line"><span class="builtin-name">export</span> <span class="attribute">CUDA_HOME</span>=/usr/local/cuda </span><br><span class="line"><span class="builtin-name">export</span> <span class="attribute">PATH</span>=PATH:CUDA_HOME/bin </span><br><span class="line"><span class="builtin-name">export</span> <span class="attribute">LD_LIBRARY_PATH</span>=/usr/local/cuda-10.1/lib64&#123;LD_LIBRARY_PATH:+:&#123;LD_LIBRARY_PATH&#125;&#125;</span><br></pre></td></tr></table></figure>
+<p>source使其生效</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">source</span> ~/.bashrc</span><br></pre></td></tr></table></figure>
+<ol start="4">
+<li>验证</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ nvcc -V</span><br></pre></td></tr></table></figure>
+<ol start="5">
+<li>编译sample验证</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> /usr/<span class="built_in">local</span>/cuda/samples/1_Utilities/deviceQuery</span><br><span class="line">$ sudo make</span><br><span class="line">$ ./deviceQuery</span><br></pre></td></tr></table></figure>
+<p>编译成功说明安装完成。</p>
+<ol start="6">
+<li>显示驱动信息和CUDA版本</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ nvidia-smi</span><br></pre></td></tr></table></figure>
+<h1 id="安装cudnn">安装cuDNN</h1>
+<p>官网注册下载,下载uDNN v7.5.0 (Feb 25, 2019), for CUDA 10.1，注意与CUDA版本保持对应！<br>
+解压文件后，复制相应文件至cuda中并更改权限,具体如下：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo cp cuda/include/cudnn.h /usr/<span class="built_in">local</span>/cuda/include/ </span><br><span class="line">$ sudo cp cuda/lib64/libcudnn* /usr/<span class="built_in">local</span>/cuda/lib64/ </span><br><span class="line">$ sudo chmod a+r /usr/<span class="built_in">local</span>/cuda/include/cudnn.h </span><br><span class="line">$ sudo chmod a+r /usr/<span class="built_in">local</span>/cuda/lib64/libcudnn*</span><br></pre></td></tr></table></figure>
+<p>验证查看CuDNN版本</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ cat /usr/<span class="built_in">local</span>/cuda/include/cudnn.h | grep CUDNN_MAJOR -A 2</span><br></pre></td></tr></table></figure>
+<h1 id="安装pytorch">安装Pytorch</h1>
+<p>Pytorch官网下载安装pip或conda版本的pytorch<br>
+注意Pytorch版本需要和CUDA版本相对应！<br>
+Stable, Linux, Pip, Python3.6, CUDA10</p>
+]]></content>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Ubuntu18.04安装搜狗输入法</title>
+    <url>/2018/05/15/Ubuntu18-04%E5%AE%89%E8%A3%85%E6%90%9C%E7%8B%97%E8%BE%93%E5%85%A5%E6%B3%95/</url>
+    <content><![CDATA[<p>最近更新了Ubuntu18.04，一直在使用搜狗再安装搜狗输入法时遇到了一些问题，网上搜到的资料很多都需要重新打包，最新版的搜狗输入法已经不需要重新打包，直接安装即可，在此将成功安装的步骤分享。</p>
+<h1 id="安装中文语言">安装中文语言</h1>
+<p>由于安装了英文系统，因此首先需要安装中文语言，Setting-Region&amp;Language中点击“Manage Installed Languages”，在弹出的对话框中可以通过“Install/Remove Language”安装简体中文。</p>
+<h1 id="下载搜狗输入法">下载搜狗输入法</h1>
+<p>下载linux版本，官方地址https://pinyin.sogou.com/linux/</p>
+<h1 id="安装搜狗输入法">安装搜狗输入法</h1>
+<p>进入下载的deb包路径<br>
+sudo dpkg -i 你的deb包名称<br>
+此时有可能安装不成功，调用apt的自动修复,自动安装缺少的包<br>
+sudo apt-get install -f<br>
+此时已经安装了fcitx，重启。</p>
+<h1 id="配置输入法">配置输入法</h1>
+<ol>
+<li>重启后，在上述“Manage Installed Languages”（即Language Support设置窗口中），将“Keyboard input method system”设置为“fcitx”。</li>
+<li>在系统中搜索fcitx configuration，点击左下角添加输入法，在弹出的对话框中将Only Show Current Language取消，即可看到sogou Pinyin，选择添加即可。</li>
+</ol>
+<h1 id="重启完成">重启完成</h1>
+<p>到此为止搜狗输入法应该能够正常使用。</p>
+]]></content>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>解决windows和ubuntu双系统时间错误问题</title>
+    <url>/2017/10/07/%E8%A7%A3%E5%86%B3windows%E5%92%8Cubuntu%E5%8F%8C%E7%B3%BB%E7%BB%9F%E6%97%B6%E9%97%B4%E9%94%99%E8%AF%AF%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<h1 id="问题原因">问题原因</h1>
+<p>ubuntu和windows的系统时间都是参照BIOS时间来设定的，但是二者的设定规则有所不同，其中：</p>
+<ul>
+<li>ubuntu系统中将BIOS时间作为格林威治时间，然后加上时区，得到系统时间，使用UTC世界协调时间；</li>
+<li>windows系统中BIOS直接作为系统时间。</li>
+</ul>
+<h1 id="解决方法">解决方法</h1>
+<p>因此有两种方法可以解决双系统时间错误问题，可以根据自己情况使用两者之一解决该问题。</p>
+<h2 id="关闭ubuntu系统的utc">关闭ubuntu系统的UTC：</h2>
+<ol>
+<li>终端中输入sudo vim /etc/default/rcS；</li>
+<li>找到UTC=yes这一行，改成UTC=no；</li>
+<li>重启即可。</li>
+</ol>
+<h2 id="开启windows系统的utc">开启windows系统的UTC：</h2>
+<ol>
+<li>regedit启动注册表中打开路径HKEY_LOCAL_MACHINE/SYSTEM/CurrentControlSet/Control/TimeZoneInformation/；</li>
+<li>新建DWORD（32位值），并设置名称为RealTimeIsUniversal，值为1；</li>
+<li>重启。</li>
+</ol>
+<p>P.S. 对注册表进行修改前建议备份，以免误操作</p>
+]]></content>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Ubuntu常用软件安装与配置</title>
+    <url>/2017/04/08/Ubuntu%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[<h1 id="chrome">chrome</h1>
+<p>下载<a href="http://www.ubuntuchrome.com/" target="_blank" rel="noopener">deb包</a>双击安装即可</p>
+<h1 id="为知笔记">为知笔记</h1>
+<p>打开终端，通过官方PPA仓库安装</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo add-apt-repository ppa:wiznote-team </span><br><span class="line">$ sudo apt-get update </span><br><span class="line">$ sudo apt-get install wiznote</span><br></pre></td></tr></table></figure>
+<h1 id="shadowsocks">shadowsocks</h1>
+<p>打开终端，通过官方PPA仓库安装</p>
+<figure class="highlight smali"><table><tr><td class="code"><pre><span class="line">$ sudo<span class="built_in"> add-apt-repository </span>ppa:hzwhuang/ss-qt5</span><br><span class="line">$ sudo apt-get update</span><br><span class="line">$ sudo apt-get install shadowsocks-qt5</span><br></pre></td></tr></table></figure>
+<h1 id="删除libreoffice">删除libreoffice</h1>
+<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">$ sudo apt-<span class="builtin-name">get</span> <span class="builtin-name">remove</span> libreoffice-common</span><br></pre></td></tr></table></figure>
+<h1 id="删除amazon的链接">删除Amazon的链接</h1>
+<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">$ sudo apt-<span class="builtin-name">get</span> <span class="builtin-name">remove</span> unity-webapps-common</span><br></pre></td></tr></table></figure>
+<h1 id="卸载火狐浏览器ubufox">卸载火狐浏览器，ubufox</h1>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get purge firefox ubufox</span><br></pre></td></tr></table></figure>
+<h1 id="安装vim">安装Vim</h1>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get install vim</span><br></pre></td></tr></table></figure>
+<h1 id="安装搜狗输入法">安装搜狗输入法</h1>
+<p>下载<a href="http://pinyin.sogou.com/linux/" target="_blank" rel="noopener">搜狗输入法</a>，双击安装或dpkg安装均可，另外，Ubuntu18.04安装搜狗输入法具体步骤参见另外一篇博客。</p>
+<h1 id="安装wps">安装wps</h1>
+<p>登录http://community.wps.cn/download/<br>
+下载wps，双击安装</p>
+<ol>
+<li>下载缺失的字体文件，然后复制到Linux系统中的/usr/share/fonts文件夹中。<br>
+<a href="https://www.dropbox.com/s/lfy4hvq95ilwyw5/wps_symbol_fonts.zip" target="_blank" rel="noopener">国外下载地址</a><br>
+<a href="https://pan.baidu.com/s/1eS6xIzo" target="_blank" rel="noopener">国内下载地址</a><br>
+下载完成后，解压并执行：</li>
+</ol>
+<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">sudo mv wps_symbol_fonts <span class="regexp">/usr/</span>share<span class="regexp">/fonts</span></span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>执行以下命令,生成字体的索引信息：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo mkfontscale</span><br><span class="line">$ sudo mkfontdir</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>运行fc-cache命令更新字体缓存。</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo <span class="built_in">fc</span>-cache</span><br></pre></td></tr></table></figure>
+<ol start="4">
+<li>重启wps即可，字体缺失的提示不再出现。</li>
+</ol>
+<h1 id="安装sublime-text-3">安装Sublime Text 3</h1>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo add-apt-repository ppa:webupd8team/sublime-text-3</span><br><span class="line">$ sudo apt-get update</span><br><span class="line">$ sudo apt-get install sublime-text</span><br></pre></td></tr></table></figure>
+<h1 id="安装axel">安装axel</h1>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get install axel</span><br></pre></td></tr></table></figure>
+<h1 id="安装unrar">安装unrar</h1>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get install unrar</span><br></pre></td></tr></table></figure>
+<h1 id="在任务栏显示网速">在任务栏显示网速</h1>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo add-apt-repository ppa:nilarimogard/webupd8</span><br><span class="line">$ sudo apt-get update</span><br><span class="line">$ sudo apt-get install indicator-netspeed</span><br></pre></td></tr></table></figure>
+<h1 id="ubuntu-切换中文目录为英文目录">Ubuntu 切换中文目录为英文目录</h1>
+<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line"><span class="builtin-name">export</span> <span class="attribute">LANG</span>=en_US</span><br><span class="line">xdg-user-dirs-gtk-update</span><br></pre></td></tr></table></figure>
+<p>echo 选 update</p>
+<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line"><span class="builtin-name">export</span> <span class="attribute">LANG</span>=zh_CN.UTF-8</span><br><span class="line">xdg-user-dirs-gtk-update</span><br></pre></td></tr></table></figure>
+<p>echo 选“不要再提醒”和“保持原来的名称”</p>
+]]></content>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Ubuntu常用命令</title>
+    <url>/2017/04/05/Ubuntu%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
+    <content><![CDATA[<p>复制：cp 文件名 路径</p>
+<p>移动：mv 文件 文件夹</p>
+<p>重命名 ：mv 文件 文件（不存在）；mv 文件夹 文件夹（不存在）</p>
+<p>删除：rm -rf 文件或文件夹（递归强制删除）</p>
+<p>显示当前路径：pwd</p>
+<p>管理员权限：命令加sudo</p>
+<p>进入root模式：sudo su</p>
+<p>安装.deb文件：sudo dpkg -i **.deb</p>
+<p>清理安装文件：sudo apt-get clean</p>
+<p>修复依赖文件：sudo apt-get -f install</p>
+<p>改变终端当前目录位置：cd；cd 目标目录位置；cd / #转到根目录位置#</p>
+<p>列出（行式）当前目录下的全部文件以及文件夹名称：ls</p>
+<p>新建一个具有管理员权限的文件窗口（默认位置是根目录，须配合sudo命令）：sudo nautilus</p>
+<p>编辑指定文本文件：sudo gedit or sudo vim</p>
+<p>安装软件：sudo apt-get install **</p>
+<p>卸载指定的程序（或单用删除文件）：sudo apt-get remove --purge nvidia*</p>
+<p>更新本地软件源文件：sudo apt-get update</p>
+<p>安装更新：sudo apt-get upgrade</p>
+<p>更新引导，通常在更改驱动（特别是显卡）和内核后必要的操作：update-grub</p>
+<p>重启：reboot</p>
+<p>关机：shutdown</p>
+]]></content>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+</search>
