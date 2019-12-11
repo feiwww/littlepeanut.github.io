@@ -33,9 +33,7 @@
 <li>登录注册<a href="https://analytics.google.com/analytics" target="_blank" rel="noopener">Google Analytics</a>,填写域名生成跟踪ID</li>
 <li>由于beantech主题已经实现了该功能，直接将跟踪ID填写在站点配置文件中_config.yml即可。</li>
 </ol>
-<hr>
-<p>Ref. <a href="https://godweiyang.com/2018/04/13/hexo-blog/" target="_blank" rel="noopener">韦阳的博客</a><br>
-<a href="https://www.simon96.online/2018/10/12/hexo-tutorial/" target="_blank" rel="noopener">遇见西门</a></p>
+<p>Ref. <a href="https://godweiyang.com/2018/04/13/hexo-blog/" target="_blank" rel="noopener">韦阳的博客</a>, <a href="https://www.simon96.online/2018/10/12/hexo-tutorial/" target="_blank" rel="noopener">遇见西门</a></p>
 ]]></content>
       <tags>
         <tag>Blog</tag>

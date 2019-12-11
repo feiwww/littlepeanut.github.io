@@ -302,32 +302,58 @@
 <li>将代码上传到hexo分支中</li>
 </ol>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout hexo</span><br><span class="line">$ git add .</span><br><span class="line">$ git commit -m <span class="string">"update my blog source code"</span></span><br><span class="line">$ git push origin hexo</span><br></pre></td></tr></table></figure>
-                
+
 
                 <hr>
                 <!-- Pager -->
                 <ul class="pager">
                     
-                        <li class="previous">
-                            <a href="/2019/12/09/Hexo-beantech主题博客常见bug修复/" data-toggle="tooltip" data-placement="top" title="Hexo-beantech主题博客常见bug修复">&larr; Previous Post</a>
-                        </li>
+                    <li class="previous">
+                        <a href="/2019/12/09/Hexo-beantech主题博客常见bug修复/" data-toggle="tooltip" data-placement="top"
+                            title="Hexo-beantech主题博客常见bug修复">&larr; Previous Post</a>
+                    </li>
                     
                     
-                        <li class="next">
-                            <a href="/2019/03/13/scipy稀疏矩阵的存储格式/" data-toggle="tooltip" data-placement="top" title="scipy稀疏矩阵的存储格式">Next Post &rarr;</a>
-                        </li>
+                    <li class="next">
+                        <a href="/2019/03/13/scipy稀疏矩阵的存储格式/" data-toggle="tooltip" data-placement="top"
+                            title="scipy稀疏矩阵的存储格式">Next Post &rarr;</a>
+                    </li>
                     
                 </ul>
-                
+
                 <!--畅言云评论PC版-->
-                <div id="SOHUCS" ></div>
-                <script charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/changyan.js" ></script>
+                <div id="SOHUCS"></div>
+                <script charset="utf-8" type="text/javascript"
+                    src="https://changyan.sohu.com/upload/changyan.js"></script>
                 <script type="text/javascript">
                     window.changyan.api.config({
                         appid: 'cyuzPPYBx',
                         conf: 'prod_5e1680173ac2f298aa36381ba9396f32'
                     });
                 </script>
+
+                <!-- <br><br>
+                <!--valine评论-->
+                <div class="valine_comment"></div>
+                <!--载入js，在</body>之前插入即可-->
+                <!--Leancloud 操作库:-->
+                <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+                <!--Valine 的核心代码库-->
+                <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+                <script>
+                    var notify = 'false' == true ? true : false;
+                    var verify = 'false' == true ? true : false;
+                    new Valine({
+                        // AV 对象来自上面引入av-min.js(老司机们不要开车➳♡゛扎心了老铁)
+                        av: AV,
+                        el: '.valine_comment',
+                        emoticon_url: 'https://cloud.panjunwen.com/alu',
+                        emoticon_list: ["狂汗.png", "不说话.png", "汗.png", "坐等.png", "献花.png", "不高兴.png", "中刀.png", "害羞.png", "皱眉.png", "小眼睛.png", "暗地观察.png"],
+                        app_id: 'dq7MN2VKz3IvVbXetd7yifGA-gzGzoHsz',
+                        app_key: '4m0nMFzm7LU4WekcWEUYeVlq',
+                        placeholder: '有话要说？'
+                    });
+                </script> -->
 
                 <!-- duoshuo Share start -->
                 
@@ -341,7 +367,7 @@
                 
                 <!-- disqus comment end -->
             </div>
-            
+
             <!-- Tabe of Content -->
             <!-- Table of Contents -->
 
@@ -356,7 +382,7 @@
       </aside>
     
 
-                
+
             <!-- Sidebar Container -->
             <div class="
                 col-lg-8 col-lg-offset-2
@@ -369,8 +395,9 @@
                     <!-- no hr -->
                     <h5><a href="/tags/">FEATURED TAGS</a></h5>
                     <div class="tags">
-                       
-                          <a class="tag" href="/tags/#Blog" title="Blog">Blog</a>
+                        
+                        <a class="tag" href="/tags/#Blog"
+                            title="Blog">Blog</a>
                         
                     </div>
                 </section>
@@ -383,7 +410,7 @@
                 <ul class="list-inline">
 
                     
-                        <li><a href="https://rse.buaa.edu.cn/" target="_blank">RSE, BUAA</a></li>
+                    <li><a href="https://rse.buaa.edu.cn/" target="_blank">RSE, BUAA</a></li>
                     
                 </ul>
                 
@@ -401,21 +428,21 @@
 <!-- async load function -->
 <script>
     function async(u, c) {
-      var d = document, t = 'script',
-          o = d.createElement(t),
-          s = d.getElementsByTagName(t)[0];
-      o.src = u;
-      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
-      s.parentNode.insertBefore(o, s);
+        var d = document, t = 'script',
+            o = d.createElement(t),
+            s = d.getElementsByTagName(t)[0];
+        o.src = u;
+        if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+        s.parentNode.insertBefore(o, s);
     }
 </script>
 <!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
 <script>
-    async("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+    async("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function () {
         anchors.options = {
-          visible: 'hover',
-          placement: 'left',
-          icon: 'ℬ'
+            visible: 'hover',
+            placement: 'left',
+            icon: 'ℬ'
         };
         anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
     })
@@ -423,17 +450,16 @@
 <style>
     /* place left on bigger screen */
     @media all and (min-width: 800px) {
-        .anchorjs-link{
+        .anchorjs-link {
             position: absolute;
             left: -0.75em;
             font-size: 1.1em;
-            margin-top : -0.1em;
+            margin-top: -0.1em;
         }
     }
 </style>
 
 <script type="text/javascript" src="node_modules/zooming/build/zooming.min.js"></script>
-
 
     <!-- Footer -->
     <!-- Footer -->
